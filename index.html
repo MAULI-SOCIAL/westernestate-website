@@ -1,171 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Western Estate</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Western Estate</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-      background: #fdfcf9;
-      color: #111;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+  background: #fdfcf9;
+  color: #111;
+}
 
-    .navbar {
-      padding: 20px 40px;
-      border-bottom: 1px solid #eee;
-      font-weight: 600;
-      font-size: 18px;
-      background: #fdfcf9;
-    }
+/* NAVBAR */
+.navbar {
+  padding: 20px 40px;
+  font-weight: 600;
+  font-size: 18px;
+  border-bottom: 1px solid #eee;
+  background: #fdfcf9;
+}
 
-    .hero {
-      text-align: center;
-      padding: 120px 20px;
-      background: linear-gradient(to bottom, #fdfcf9, #f5f2ea);
-    }
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  background: linear-gradient(to bottom, #fdfcf9, #f3efe6);
+}
 
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
-    }
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
 
-    .hero h2 {
-      font-size: 18px;
-      font-weight: 400;
-      color: #555;
-      max-width: 600px;
-      margin: auto;
-    }
+.hero h2 {
+  font-size: 18px;
+  color: #555;
+  max-width: 600px;
+  margin: auto;
+}
 
-    .btn {
-      margin-top: 30px;
-      display: inline-block;
-      padding: 12px 24px;
-      border: 1px solid #111;
-      color: #111;
-      text-decoration: none;
-      font-size: 14px;
-    }
+.btn {
+  margin-top: 30px;
+  display: inline-block;
+  padding: 12px 24px;
+  border: 1px solid #111;
+  text-decoration: none;
+  color: #111;
+  transition: 0.3s;
+}
 
-    .btn:hover {
-      background: #111;
-      color: #fff;
-    }
+.btn:hover {
+  background: #111;
+  color: #fff;
+}
 
-    .divider {
-      width: 60px;
-      height: 2px;
-      background: #111;
-      margin: 25px auto;
-      opacity: 0.2;
-    }
+/* CONTAINER */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 60px 20px;
+}
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 60px 20px;
-    }
+/* CARD SECTIONS (CHROME STYLE) */
+.card {
+  margin-top: 40px;
+  padding: 30px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
 
-    h2 {
-      margin-top: 60px;
-      font-size: 26px;
-    }
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    p {
-      color: #444;
-      font-size: 16px;
-      line-height: 1.7;
-    }
+h2 {
+  margin-bottom: 10px;
+}
 
-    ul {
-      color: #444;
-      padding-left: 20px;
-    }
+p {
+  color: #444;
+  line-height: 1.7;
+}
 
-    footer {
-      text-align: center;
-      padding: 40px;
-      border-top: 1px solid #eee;
-      color: #666;
-      font-size: 14px;
-      background: #fdfcf9;
-    }
+ul {
+  color: #444;
+  padding-left: 20px;
+}
 
-    .highlight {
-      font-weight: 500;
-      color: #000;
-    }
-  </style>
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid #eee;
+  color: #666;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <div class="navbar">
-    Western Estate
-  </div>
+<div class="navbar">Western Estate</div>
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Western Estate</h1>
-    <div class="divider"></div>
-    <h2>
-      Governance Intelligence Platform enabling grievance redressal, transparency, and citizen-first administration
-    </h2>
+<div class="hero">
+  <h1>Western Estate</h1>
+  <h2>
+    Governance Intelligence Platform enabling grievance redressal, transparency,
+    and citizen-first administration
+  </h2>
+  <a href="#contact" class="btn">Contact Us</a>
+</div>
 
-    <a href="#contact" class="btn">Contact Us</a>
-  </div>
+<div class="container">
 
-  <!-- CONTENT -->
-  <div class="container">
-
+  <div class="card">
     <h2>The Problem</h2>
     <p>
       Governance is only as strong as its ability to listen—and respond.
       Traditional grievance systems struggle with increasing volume, leading to delays,
       inefficiencies, and loss of public trust.
     </p>
+  </div>
 
+  <div class="card">
     <h2>The Solution</h2>
     <p>
       Our AI-powered platform transforms grievance handling through automation,
       structured workflows, and real-time tracking.
     </p>
-
     <ul>
       <li>Instant complaint categorization</li>
       <li>Automated department routing</li>
-      <li>Real-time status tracking</li>
+      <li>Real-time tracking</li>
       <li>Data-driven insights</li>
     </ul>
+  </div>
 
+  <div class="card">
     <h2>MAULI System</h2>
     <p>
       A unified grievance intelligence platform enabling structured communication,
       administrative efficiency, and governance transparency.
     </p>
+  </div>
 
+  <div class="card">
     <h2>About</h2>
     <p>
       Western Estate builds high-impact systems across governance, real estate,
       and data intelligence—focused on automation, analytics, and scale.
     </p>
-
-    <h2 id="contact">Contact</h2>
-    <p class="highlight">Phone: 7774049999</p>
-    <p class="highlight">Email: westernestateanalytica@gmail.com</p>
-
   </div>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 Western Estate<br>
-    Governance Intelligence Platform
-  </footer>
+  <div class="card" id="contact">
+    <h2>Contact</h2>
+    <p><strong>Phone:</strong> 7774049999</p>
+    <p><strong>Email:</strong> westernestateanalytica@gmail.com</p>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Western Estate<br>
+  Governance Intelligence Platform
+</footer>
+
+<script>
+const cards = document.querySelectorAll('.card');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+});
+
+cards.forEach(card => observer.observe(card));
+</script>
 
 </body>
 </html>
