@@ -6,13 +6,17 @@
 <title>WESTERN ESTATE</title>
 
 <style>
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
   background: #fdfcf9;
   color: #111;
 }
-
 /* NAVBAR */
 .navbar {
   padding: 20px 40px;
@@ -158,6 +162,8 @@ footer {
     transparency, and citizen-first administration
   </h2>
   <a href="#contact" class="btn">Contact Us</a>
+  <a href="#mauli" class="btn secondary">Our Product</a>
+  <a href="#about" class="btn secondary">About Us</a>
 </div>
 
 <div class="container">
@@ -207,7 +213,7 @@ By reducing dependency on manual sorting and communication, the system minimizes
 
   <div class="card">
     <div class="icon"> OUR PRODUCT 🧠</div>
-    <h2>MAULI – Management & Automation Unit for Local Intelligence</h2>
+    <h2 id="mauli">MAULI – Management & Automation Unit for Local Intelligence</h2>
 <p>
 MAULI is designed as a comprehensive grievance intelligence system that bridges the gap between citizens and administrative bodies. 
 It provides a unified interface through which grievances can be recorded, processed, and monitored in a structured and transparent manner.
@@ -262,7 +268,7 @@ By combining accessibility at the citizen level with analytical capabilities at 
   </div>
   <div class="card">
     <div class="icon">🏢</div>
-    <h2>About Western Estate</h2>
+    <h2 id="about">About Western Estate</h2>
 <p>
 Western Estate is a technology-driven organization focused on building high-impact systems across governance, real estate, and data intelligence. 
 The organization operates at the intersection of automation, analytics, and public systems, with the objective of enabling institutions to function with greater efficiency, transparency, and scale.
