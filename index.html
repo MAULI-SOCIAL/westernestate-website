@@ -24,10 +24,27 @@ body {
 
 /* HERO */
 .hero {
+  position: relative;
   text-align: center;
   padding: 120px 20px;
-  background: linear-gradient(to bottom, #fdfcf9, #f3efe6);
+  background: url('dashboard.jpg') center/cover no-repeat;
+  color: white;
 }
+
+/* overlay for readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+/* keep text above overlay */
+.hero * {
+  position: relative;
+  z-index: 1;
+}}
 
 .hero h1 {
   font-size: 50px;
