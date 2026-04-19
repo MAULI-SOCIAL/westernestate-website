@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-      background: #ffffff;
+      background: #fdfcf9;
       color: #111;
     }
 
@@ -18,24 +18,25 @@
       border-bottom: 1px solid #eee;
       font-weight: 600;
       font-size: 18px;
+      background: #fdfcf9;
     }
 
     .hero {
       text-align: center;
-      padding: 100px 20px;
-      background: #111;
-      color: white;
+      padding: 120px 20px;
+      background: linear-gradient(to bottom, #fdfcf9, #f5f2ea);
     }
 
     .hero h1 {
-      font-size: 42px;
+      font-size: 48px;
       margin-bottom: 10px;
+      letter-spacing: 1px;
     }
 
     .hero h2 {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 400;
-      color: #ccc;
+      color: #555;
       max-width: 600px;
       margin: auto;
     }
@@ -44,15 +45,23 @@
       margin-top: 30px;
       display: inline-block;
       padding: 12px 24px;
-      border: 1px solid white;
-      color: white;
+      border: 1px solid #111;
+      color: #111;
       text-decoration: none;
       font-size: 14px;
     }
 
     .btn:hover {
-      background: white;
-      color: black;
+      background: #111;
+      color: #fff;
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: #111;
+      margin: 25px auto;
+      opacity: 0.2;
     }
 
     .container {
@@ -83,11 +92,12 @@
       border-top: 1px solid #eee;
       color: #666;
       font-size: 14px;
+      background: #fdfcf9;
     }
 
-    .brand {
-      font-weight: 700;
-      letter-spacing: 1px;
+    .highlight {
+      font-weight: 500;
+      color: #000;
     }
   </style>
 </head>
@@ -96,13 +106,17 @@
 
   <!-- NAVBAR -->
   <div class="navbar">
-    <span class="brand">Western Estate</span>
+    Western Estate
   </div>
 
   <!-- HERO -->
   <div class="hero">
-    <h1>Responsive Governance</h1>
-    <h2>AI-powered systems for grievance redressal, transparency, and citizen-first administration</h2>
+    <h1>Western Estate</h1>
+    <div class="divider"></div>
+    <h2>
+      Governance Intelligence Platform enabling grievance redressal, transparency, and citizen-first administration
+    </h2>
+
     <a href="#contact" class="btn">Contact Us</a>
   </div>
 
@@ -135,15 +149,15 @@
       administrative efficiency, and governance transparency.
     </p>
 
-    <h2>About Western Estate</h2>
+    <h2>About</h2>
     <p>
       Western Estate builds high-impact systems across governance, real estate,
       and data intelligence—focused on automation, analytics, and scale.
     </p>
 
     <h2 id="contact">Contact</h2>
-    <p><strong>Phone:</strong> 91 7774049999</p>
-    <p><strong>Email:</strong> westernestateanalytica@gmail.com</p>
+    <p class="highlight">Phone: 7774049999</p>
+    <p class="highlight">Email: westernestateanalytica@gmail.com</p>
 
   </div>
 
