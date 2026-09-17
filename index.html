@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Western Estate — MAULI Governance Platform</title>
 
+<!-- Google Fonts & Font Awesome Icons -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -50,20 +51,40 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 8%;
+    padding: 14px 8%;
     background: rgba(255, 242, 245, 0.85);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--pink-light);
   }
 
+  .brand-container {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
   .brand {
     font-weight: 800;
-    font-size: 22px;
+    font-size: 20px;
     letter-spacing: -0.5px;
     color: var(--pink-accent);
     display: flex;
     align-items: center;
     gap: 10px;
+  }
+
+  .brand-divider {
+    height: 28px;
+    width: 2px;
+    background: var(--pink-light);
+  }
+
+  .mauli-nav-logo {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    filter: drop-shadow(0 2px 4px rgba(255, 77, 121, 0.2));
   }
 
   .nav-links {
@@ -122,7 +143,9 @@
   }
 
   .tagline-badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     background: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.4);
     color: #fff;
@@ -133,6 +156,12 @@
     letter-spacing: 1px;
     margin-bottom: 20px;
     text-transform: uppercase;
+  }
+
+  .tagline-badge img {
+    height: 18px;
+    width: auto;
+    filter: brightness(0) invert(1);
   }
 
   .hero h1 {
@@ -285,14 +314,67 @@
     margin-top: 4px;
   }
 
-  /* --- MAULI DETAILED DEEP DIVE --- */
+  /* --- MAULI DETAILED DEEP DIVE & BRAND SHOWCASE --- */
+  .mauli-brand-showcase {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 30px;
+    align-items: stretch;
+    margin-bottom: 40px;
+  }
+
+  .mauli-logo-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 32px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--glass-border);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mauli-logo-card::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: var(--pink-accent);
+    filter: blur(70px);
+    opacity: 0.15;
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  .mauli-main-logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+
   .mauli-hero-card {
     background: var(--pink-gradient);
     color: white;
     border-radius: 32px;
     padding: 45px;
     box-shadow: 0 20px 50px rgba(255, 77, 121, 0.25);
-    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .mauli-hero-card h3 {
@@ -305,6 +387,10 @@
     font-size: 16px;
     line-height: 1.7;
     margin-bottom: 16px;
+  }
+
+  .mauli-hero-card p:last-child {
+    margin-bottom: 0;
   }
 
   /* --- IMPACT & PROFILING METRICS BOX --- */
@@ -464,7 +550,7 @@
   }
 
   @media (max-width: 900px) {
-    .grid-2, .grid-3, .slide { grid-template-columns: 1fr; }
+    .grid-2, .grid-3, .slide, .mauli-brand-showcase { grid-template-columns: 1fr; }
     .hero h1 { font-size: 34px; }
   }
 </style>
@@ -472,8 +558,13 @@
 
 <body>
 
+  <!-- NAVBAR WITH MAULI LOGO INTEGRATION -->
   <nav class="navbar">
-    <div class="brand"><i class="fa-solid fa-layer-group"></i> WESTERN ESTATE</div>
+    <div class="brand-container">
+      <div class="brand"><i class="fa-solid fa-layer-group"></i> WESTERN ESTATE</div>
+      <div class="brand-divider"></div>
+      <img src="MAULI.png" alt="MAULI Logo" class="mauli-nav-logo">
+    </div>
     <div class="nav-links">
       <a href="#hero" class="nav-link">Home</a>
       <a href="#problem-solution" class="nav-link">Overview</a>
@@ -484,10 +575,13 @@
     </div>
   </nav>
 
+  <!-- HERO SECTION WITH DASHBOARD IMAGE -->
   <div class="hero-wrapper" id="hero">
     <div class="hero">
       <div class="hero-content">
-        <span class="tagline-badge">Governance Intelligence Platform</span>
+        <span class="tagline-badge">
+          <img src="MAULI.png" alt="MAULI Icon"> Governance Intelligence Platform
+        </span>
         <h1>Smart Public Administration & Grievance Operating System</h1>
         <p>Enabling constituency-scale grievance redressal, deep machine analytics, institutional transparency, and automated public governance.</p>
         <div class="cta-group">
@@ -498,6 +592,7 @@
     </div>
   </div>
 
+  <!-- OVERVIEW SECTION -->
   <div class="container" id="problem-solution">
     <div class="section-title">
       <h2>Transforming Governance</h2>
@@ -529,18 +624,26 @@
     </div>
   </div>
 
+  <!-- MAULI MAIN FOCUS SECTION -->
   <div class="container" id="mauli">
     <div class="section-title">
       <h2>Meet MAULI</h2>
       <p><strong>M</strong>anagement & <strong>A</strong>utomation <strong>U</strong>nit for <strong>L</strong>ocal <strong>I</strong>ssues</p>
     </div>
 
-    <div class="mauli-hero-card">
-      <h3>Constituency-Scale AI Governance Operating System</h3>
-      <p>MAULI is a dedicated AI software suite engineered to manage vast administrative workloads with corporate headquarters efficiency. It collects citizen inputs, extracts issue categories, structures workloads, and generates real-time actionable intelligence.</p>
-      <p>By transforming raw public complaints into structured data points, MAULI empowers public representatives and decision-makers to handle mass grievances proactively rather than reactively.</p>
+    <!-- BRAND SHOWCASE (LOGO + OVERVIEW) -->
+    <div class="mauli-brand-showcase">
+      <div class="mauli-logo-card">
+        <img src="MAULI.png" alt="MAULI Flagship Governance System Logo" class="mauli-main-logo">
+      </div>
+      <div class="mauli-hero-card">
+        <h3>Constituency-Scale AI Governance Operating System</h3>
+        <p>MAULI is a dedicated AI software suite engineered to manage vast administrative workloads with corporate headquarters efficiency. It collects citizen inputs, extracts issue categories, structures workloads, and generates real-time actionable intelligence.</p>
+        <p>By transforming raw public complaints into structured data points, MAULI empowers public representatives and decision-makers to handle mass grievances proactively rather than reactively.</p>
+      </div>
     </div>
 
+    <!-- MAULI CORE CAPABILITIES GRID -->
     <div class="grid-3" style="margin-bottom: 50px;">
       <div class="card">
         <div class="card-icon"><i class="fa-solid fa-comments"></i></div>
@@ -561,12 +664,14 @@
       </div>
     </div>
 
+    <!-- MAULI INTERACTIVE SLIDESHOW -->
     <div class="slideshow-container">
       <div style="margin-bottom: 24px;">
         <span style="color: var(--pink-accent); font-weight: 700; font-size: 13px; text-transform: uppercase;">Interactive Breakdown</span>
         <h3 style="font-size: 24px; font-weight: 800;">How MAULI Works</h3>
       </div>
 
+      <!-- SLIDE 1: MANAGEMENT -->
       <div class="slide active">
         <div class="slide-visual">
           <img src="managemen.gif" alt="Managemen GIF" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -582,6 +687,7 @@
         </div>
       </div>
 
+      <!-- SLIDE 2: AUTOMATION -->
       <div class="slide">
         <div class="slide-visual">
           <img src="autotask.gif" alt="AutoTask GIF" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -597,6 +703,7 @@
         </div>
       </div>
 
+      <!-- SLIDE 3: UNIT -->
       <div class="slide">
         <div class="slide-visual">
           <img src="unite.gif" alt="Unite GIF" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -612,6 +719,7 @@
         </div>
       </div>
 
+      <!-- SLIDE 4: LOCAL -->
       <div class="slide">
         <div class="slide-visual">
           <img src="local.gif" alt="Local GIF" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -627,6 +735,7 @@
         </div>
       </div>
 
+      <!-- SLIDE 5: ISSUES -->
       <div class="slide">
         <div class="slide-visual">
           <img src="workflow.gif" alt="Workflow GIF" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -642,6 +751,7 @@
         </div>
       </div>
 
+      <!-- CONTROLS -->
       <div class="slideshow-controls">
         <button class="btn btn-secondary" onclick="prevSlide()" style="background: var(--pink-light); color: var(--pink-dark); border: none;"><i class="fa-solid fa-arrow-left"></i> Previous</button>
         <div class="slide-dots">
@@ -656,6 +766,7 @@
     </div>
   </div>
 
+  <!-- EFFICIENCY, DECISION MAKING & PROFILING SECTION -->
   <div class="container" id="efficiency">
     <div class="section-title">
       <h2>Efficiency, Intelligence & Profiling</h2>
@@ -663,6 +774,7 @@
     </div>
 
     <div class="grid-2">
+      <!-- SYSTEM EFFICIENCY & EFFECTIVENESS -->
       <div class="card">
         <div class="card-icon"><i class="fa-solid fa-gauge-high"></i></div>
         <h3>System Efficiency & Effectiveness</h3>
@@ -674,6 +786,7 @@
         </ul>
       </div>
 
+      <!-- DATA-DRIVEN DECISION MAKING -->
       <div class="card">
         <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
         <h3>Data-Driven Decision Making</h3>
@@ -686,6 +799,7 @@
       </div>
     </div>
 
+    <!-- CONSTITUENCY PROFILING FULL-WIDTH CARD -->
     <div class="impact-box">
       <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
         <div style="background: var(--pink-gradient); color: white; width: 48px; height: 48px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
@@ -723,6 +837,7 @@
     </div>
   </div>
 
+  <!-- ABOUT SECTION -->
   <div class="container" id="about">
     <div class="card" style="max-width: 900px; margin: 0 auto;">
       <div class="card-icon"><i class="fa-solid fa-building-user"></i></div>
@@ -732,6 +847,7 @@
     </div>
   </div>
 
+  <!-- CONTACT SECTION -->
   <div class="container" id="contact">
     <div class="card" style="max-width: 650px; margin: 0 auto; text-align: center;">
       <div class="card-icon" style="margin: 0 auto 20px;"><i class="fa-solid fa-paper-plane"></i></div>
@@ -745,10 +861,12 @@
     </div>
   </div>
 
+  <!-- FLOATING WHATSAPP -->
   <a href="https://wa.me/917774049999" class="whatsapp-float" target="_blank">
     <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> Chat on WhatsApp
   </a>
 
+  <!-- FOOTER -->
   <footer>
     © 2026 Western Estate — Governance Intelligence Platform
   </footer>
