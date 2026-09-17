@@ -3,276 +3,571 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WESTERN ESTATE</title>
+<title>Western Estate — Governance Intelligence</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
+  :root {
+    --bg-primary: #fff0f5;
+    --bg-card: rgba(255, 255, 255, 0.7);
+    --pink-accent: #ff6b8b;
+    --pink-light: #ffe4e8;
+    --pink-gradient: linear-gradient(135deg, #ff8da1 0%, #ff5e7e 100%);
+    --text-dark: #2d232e;
+    --text-muted: #6b5b6e;
+    --glass-border: rgba(255, 255, 255, 0.8);
+    --shadow: 0 20px 40px rgba(255, 107, 139, 0.12);
+  }
 
-html {
-  scroll-behavior: smooth;
-}
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-  background: #fdfcf9;
-  color: #111;
-}
-/* NAVBAR */
-.navbar {
-  padding: 20px 40px;
-  font-weight: 600;
-  font-size: 18px;
-  border-bottom: 1px solid #eee;
-  background: #fdfcf9;
-}
+  html {
+    scroll-behavior: smooth;
+  }
 
-/* HERO */
-.hero {
-  position: relative;
-  text-align: center;
-  padding: 120px 20px;
-  background: url('dashboard.jpg') center/cover no-repeat;
-  color: white;
-}
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
 
-/* overlay for readability */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(2px);
-}
+  /* --- NAVBAR --- */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(255, 240, 245, 0.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--pink-light);
+  }
 
-/* keep text above overlay */
-.hero * {
-  position: relative;
-  z-index: 1;
-}}
+  .brand {
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.5px;
+    color: var(--pink-accent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 
-.hero h1 {
-  font-size: 55px;
-  margin-bottom: 10px;
-}
+  .nav-links {
+    display: flex;
+    gap: 24px;
+  }
 
-.hero h2 {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 650px;
-  margin: auto;
-}
+  .nav-btn {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
 
-.btn {
-  margin-top: 30px;
-  display: inline-block;
-  padding: 12px 26px;
-  border: 1px solid #111;
-  text-decoration: none;
-  color: #fff;
-  transition: 0.3s;
-}
+  .nav-btn:hover, .nav-btn.active {
+    color: var(--pink-accent);
+    background: var(--pink-light);
+  }
 
-.btn:hover {
-  background: #111;
-  color: #fff;
-}
+  /* --- MAIN CONTENT & PAGES --- */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 100px;
+    flex: 1;
+    width: 100%;
+  }
 
-/* CONTAINER */
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 60px 20px;
-}
+  .page {
+    display: none;
+    animation: fadeIn 0.4s ease forward;
+  }
 
-/* CARDS */
-.card {
-  margin-top: 40px;
-  padding: 30px;
-  border-radius: 16px;
-  background: rgba(255,255,255,0.65);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(0,0,0,0.08);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
+  .page.active {
+    display: block;
+  }
 
-.card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-h2 {
-  margin-bottom: 10px;
-}
+  /* --- HERO SECTION --- */
+  .hero-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow);
+    border-radius: 32px;
+    padding: 60px 40px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
 
-p {
-  color: #444;
-  line-height: 1.7;
-}
+  .tagline-badge {
+    display: inline-block;
+    background: var(--pink-light);
+    color: var(--pink-accent);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
 
-ul {
-  color: #444;
-  padding-left: 20px;
-}
+  .hero-card h1 {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: var(--text-dark);
+  }
 
-/* ICON STYLE */
-.icon {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
+  .hero-card h1 span {
+    color: var(--pink-accent);
+  }
 
-/* WHATSAPP FLOAT BUTTON */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 14px 18px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 14px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
+  .hero-card p {
+    font-size: 17px;
+    color: var(--text-muted);
+    max-width: 650px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
 
-.whatsapp:hover {
-  background: #1ebe5d;
-}
+  .cta-group {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 40px;
-  border-top: 1px solid #eee;
-  color: #666;
-}
+  .btn {
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary {
+    background: var(--pink-gradient);
+    color: white;
+    box-shadow: 0 10px 20px rgba(255, 94, 126, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 24px rgba(255, 94, 126, 0.4);
+  }
+
+  .btn-secondary {
+    background: white;
+    color: var(--text-dark);
+    border: 1px solid var(--pink-light);
+  }
+
+  .btn-secondary:hover {
+    background: var(--pink-light);
+  }
+
+  /* --- GRID & CARDS --- */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .card {
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow);
+    border-radius: 24px;
+    padding: 32px;
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    background: var(--pink-light);
+    color: var(--pink-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .card h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .card p, .card ul {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+
+  .card ul {
+    list-style: none;
+    margin-top: 12px;
+  }
+
+  .card ul li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .card ul li i {
+    color: var(--pink-accent);
+  }
+
+  /* --- SLIDESHOW SECTION --- */
+  .slideshow-container {
+    background: var(--bg-card);
+    border-radius: 28px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--glass-border);
+    position: relative;
+  }
+
+  .slide {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .slide.active {
+    display: grid;
+    animation: fadeIn 0.4s ease;
+  }
+
+  .slide-visual {
+    background: #fff;
+    border-radius: 20px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
+    border: 2px dashed var(--pink-light);
+  }
+
+  .slide-visual img {
+    max-width: 80%;
+    max-height: 180px;
+    object-fit: contain;
+  }
+
+  .slide-content h3 {
+    font-size: 24px;
+    color: var(--pink-accent);
+    margin-bottom: 10px;
+  }
+
+  .slide-content p {
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .slideshow-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--pink-light);
+  }
+
+  .slide-dots {
+    display: flex;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--pink-light);
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background: var(--pink-accent);
+    width: 24px;
+    border-radius: 10px;
+  }
+
+  /* --- FLOATING WHATSAPP --- */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #25d366;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 100;
+    transition: transform 0.3s ease;
+  }
+
+  .whatsapp-float:hover {
+    transform: translateY(-3px);
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-muted);
+    font-size: 14px;
+    border-top: 1px solid var(--pink-light);
+  }
+
+  @media (max-width: 768px) {
+    .grid-2, .slide { grid-template-columns: 1fr; }
+    .hero-card h1 { font-size: 30px; }
+  }
 </style>
 </head>
 
 <body>
 
-<div class="navbar">Western Estate</div>
+  <nav class="navbar">
+    <div class="brand"><i class="fa-solid fa-gem"></i> WESTERN ESTATE</div>
+    <div class="nav-links">
+      <button class="nav-btn active" onclick="switchPage('home')">Home</button>
+      <button class="nav-btn" onclick="switchPage('mauli')">MAULI</button>
+      <button class="nav-btn" onclick="switchPage('about')">About</button>
+      <button class="nav-btn" onclick="switchPage('contact')">Contact</button>
+    </div>
+  </nav>
 
-<div class="hero">
-  <h1>WESTERN ESTATE</h1>
-  <h2>
-    Governance Intelligence Platform enabling grievance redressal,
-    transparency, and citizen-first administration
-  </h2>
-  <a href="#mauli" class="btn secondary">Our Product</a>
-  <a href="#contact" class="btn">Contact Us</a>
-  <a href="#about" class="btn secondary">About Us</a>
-</div>
+  <div class="container">
 
-<div class="container">
+    <div id="home" class="page active">
+      <div class="hero-card">
+        <span class="tagline-badge">Governance Intelligence Platform</span>
+        <h1>Citizen-First Administration, <span>Redefined.</span></h1>
+        <p>Enabling seamless grievance redressal, institutional transparency, and automated public governance at scale.</p>
+        <div class="cta-group">
+          <button class="btn btn-primary" onclick="switchPage('mauli')">Explore MAULI</button>
+          <button class="btn btn-secondary" onclick="switchPage('contact')">Get in Touch</button>
+        </div>
+      </div>
 
-  <div class="card">
-    <div class="icon">⚠️</div>
-    <h2>The Problem</h2>
-<p>
-Governance is fundamentally defined by its ability to listen, interpret, and respond to the needs of its citizens. 
-However, as populations grow and administrative responsibilities expand, traditional grievance redressal systems are increasingly unable to keep pace with the scale and complexity of incoming issues.
-</p>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <h2>The Problem</h2>
+          <p>Traditional grievance systems struggle to handle growing citizen numbers. Manual sorting, unorganized workflows, and lack of real-time tracking result in delayed responses, departmental confusion, and public dissatisfaction.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h2>The Solution</h2>
+          <p>We combine artificial intelligence with streamlined administrative workflows to sort, categorize, and direct grievances instantly—eliminating administrative delays entirely.</p>
+          <ul>
+            <li><i class="fa-solid fa-circle-check"></i> Automated issue sorting & prioritization</li>
+            <li><i class="fa-solid fa-circle-check"></i> Real-time tracking for citizens & leaders</li>
+            <li><i class="fa-solid fa-circle-check"></i> Structured data analytics for decision making</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-<p>
-Manual processes, fragmented communication channels, and lack of structured data flow result in delayed responses, inconsistent handling of complaints, and limited accountability across departments. 
-Citizens are often left without visibility into the status of their grievances, leading to frustration and erosion of trust in public institutions.
-</p>
+    <div id="mauli" class="page">
+      <div style="text-align: center; margin-bottom: 30px;">
+        <span class="tagline-badge">Interactive System Breakdown</span>
+        <h2 style="font-size: 32px; font-weight: 800;">MAULI Platform Architecture</h2>
+        <p style="color: var(--text-muted);">Management & Automation Unit for Local Issues</p>
+      </div>
 
-<p>
-At an administrative level, the absence of consolidated and analyzable data prevents decision-makers from identifying systemic patterns, recurring issues, and priority areas for intervention.
-</p>
+      <div class="slideshow-container">
+        <div class="slide active">
+          <div class="slide-visual">
+            <img src="management.gif" alt="Management GIF" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png';">
+          </div>
+          <div class="slide-content">
+            <span style="color: var(--pink-accent); font-weight: 700;">STEP 01</span>
+            <h3>Management</h3>
+            <p>Unified cross-departmental command layer designed to monitor and regulate public operations seamlessly from a single platform.</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-visual">
+            <img src="autotask.gif" alt="AutoTask GIF" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/2097/2097276.png';">
+          </div>
+          <div class="slide-content">
+            <span style="color: var(--pink-accent); font-weight: 700;">STEP 02</span>
+            <h3>Automation</h3>
+            <p>AI-driven processing that structures recurring tasks, categorizes incoming grievances, and removes manual bottlenecks.</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-visual">
+            <img src="unit.gif" alt="Unit GIF" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/1256/1256650.png';">
+          </div>
+          <div class="slide-content">
+            <span style="color: var(--pink-accent); font-weight: 700;">STEP 03</span>
+            <h3>Unit</h3>
+            <p>Collaborative resolution modules allowing administrative teams to work in synchronization while generating actionable intelligence.</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-visual">
+            <img src="local.gif" alt="Local GIF" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/854/854878.png';">
+          </div>
+          <div class="slide-content">
+            <span style="color: var(--pink-accent); font-weight: 700;">STEP 04</span>
+            <h3>Local</h3>
+            <p>Hyper-targeted constituency mapping pinpointing exact geographical areas for fast and efficient field-level resolution.</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-visual">
+            <img src="workflow.gif" alt="Workflow GIF" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3090/3090109.png';">
+          </div>
+          <div class="slide-content">
+            <span style="color: var(--pink-accent); font-weight: 700;">STEP 05</span>
+            <h3>Issues Workflow</h3>
+            <p>Direct citizen input pipelines transform unstructured feedback into organized, traceable, and solvable tickets.</p>
+          </div>
+        </div>
+
+        <div class="slideshow-controls">
+          <button class="btn btn-secondary" onclick="prevSlide()"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+          <div class="slide-dots">
+            <span class="dot active" onclick="setSlide(0)"></span>
+            <span class="dot" onclick="setSlide(1)"></span>
+            <span class="dot" onclick="setSlide(2)"></span>
+            <span class="dot" onclick="setSlide(3)"></span>
+            <span class="dot" onclick="setSlide(4)"></span>
+          </div>
+          <button class="btn btn-primary" onclick="nextSlide()">Next <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="about" class="page">
+      <div class="card" style="max-width: 800px; margin: 0 auto;">
+        <div class="card-icon"><i class="fa-solid fa-building-flag"></i></div>
+        <h2>About Western Estate</h2>
+        <p style="margin-bottom: 16px;">Western Estate is a forward-thinking technology organization engineered to design high-impact administrative frameworks at the intersection of public systems, automation, and real estate data intelligence.</p>
+        <p>By transforming raw public interaction into actionable structured data, Western Estate allows public leaders and organizations to deliver fast, transparent, and precise administrative actions.</p>
+      </div>
+    </div>
+
+    <div id="contact" class="page">
+      <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <div class="card-icon" style="margin: 0 auto 20px;"><i class="fa-solid fa-paper-plane"></i></div>
+        <h2>Connect With Us</h2>
+        <p style="margin-bottom: 30px;">Let us help transform your public administrative workflows.</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 16px; align-items: center;">
+          <a href="tel:+917774049999" class="btn btn-secondary" style="width: 100%;"><i class="fa-solid fa-phone" style="color: var(--pink-accent);"></i> +91 7774049999</a>
+          <a href="mailto:westernestateanalytica@gmail.com" class="btn btn-secondary" style="width: 100%;"><i class="fa-solid fa-envelope" style="color: var(--pink-accent);"></i> westernestateanalytica@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <div class="card">
-    <div class="icon">⚙️</div>
-    <h2>The Solution</h2>
-<p>
-Our Services introduce a structured, technology-driven approach to grievance redressal by integrating artificial intelligence with well-defined administrative workflows. 
-The objective is not merely to digitize existing processes, but to fundamentally enhance their efficiency, transparency, and scalability.
-</p>
+  <a href="https://wa.me/917774049999" class="whatsapp-float" target="_blank">
+    <i class="fa-brands fa-whatsapp" style="font-size: 18px;"></i> Chat with us
+  </a>
 
-<p>
-Through intelligent automation, incoming grievances are instantly categorized, summarized, and routed to the appropriate departments without manual intervention. 
-Each complaint is tracked throughout its lifecycle, ensuring accountability at every stage of resolution.
-</p>
+  <footer>
+    © 2026 Western Estate — Governance Intelligence Platform
+  </footer>
 
-<p>
-By reducing dependency on manual sorting and communication, the system minimizes delays, eliminates ambiguity, and enables institutions to respond with speed and precision.
-</p>
+  <script>
+    // PAGE NAVIGATION
+    function switchPage(pageId) {
+      document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
 
-<ul>
-<li>Automated classification and prioritization of grievances</li>
-<li>Seamless routing to relevant administrative units</li>
-<li>Real-time status tracking for both citizens and officials</li>
-<li>Structured data generation for analytical insights</li>
-</ul>
-  </div>
+      document.getElementById(pageId).classList.add('active');
+      
+      const activeBtn = Array.from(document.querySelectorAll('.nav-btn'))
+        .find(btn => btn.getAttribute('onclick').includes(pageId));
+      if (activeBtn) activeBtn.classList.add('active');
 
-  <div class="card">
-    <div class="icon"> OUR PRODUCT 🧠</div>
-    <h2 id="mauli">MAULI – Management & Automation Unit for Local Intelligence</h2>
-<p>
-MAULI is designed as a comprehensive grievance intelligence system that bridges the gap between citizens and administrative bodies. 
-It provides a unified interface through which grievances can be recorded and processed with clarity, structure and control.
-</p>
-
-<p>
-A constituency-scale governance operating system engineered to manage public administration with the precision of a high-performance enterprise.
-<p>
-MAULI transforms fragmented citizen interactions into a structured intelligence layer, where every grievance, request, and field input is captured, classified, and dynamically routed through a centralized control architecture. This enables governance to shift from reactive problem-solving to proactive system management
-</p>
-The platform is anchored by a multifeature Control Unit Dashboard—a command center designed for representatives and administrative teams. Much like how a corporate headquarters oversees multiple departments.
-</p>
-    
-  </div>
-  <div class="card">
-    <div class="icon">🏢</div>
-    <h2 id="about">About Western Estate</h2>
-<p>
-Western Estate is a technology-driven organization focused on building high-impact systems across governance, real estate, and data intelligence. 
-The organization operates at the intersection of automation, analytics, and public systems, with the objective of enabling institutions to function with greater efficiency, transparency, and scale.
-</p>
-
-<p>
-By leveraging modern technologies and structured design principles, Western Estate develops solutions that are not only operationally effective but also aligned with the evolving demands of digital governance.
-</p>
-  </div>
-
-  <div class="card" id="contact">
-    <div class="icon">📞</div>
-    <h2>Contact</h2>
-    <p><strong>Phone:</strong> +91 7774049999</p>
-    <p><strong>Email:</strong> westernestateanalytica@gmail.com</p>
-  </div>
-
-</div>
-
-<footer>
-  © 2026 Western Estate<br>
-  Governance Intelligence Platform
-</footer>
-
-<!-- WHATSAPP BUTTON -->
-<a class="whatsapp" href="https://wa.me/917774049999" target="_blank">
-  Chat on WhatsApp
-</a>
-
-<script>
-const cards = document.querySelectorAll('.card');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  });
-});
 
-cards.forEach(card => observer.observe(card));
-</script>
+    // SLIDESHOW LOGIC
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
 
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      currentSlide = (index + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    function setSlide(index) {
+      showSlide(index);
+    }
+  </script>
 </body>
 </html>
