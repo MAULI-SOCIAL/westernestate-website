@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Western Estate — MAULI Governance Platform</title>
 
-<!-- Google Fonts & Font Awesome Icons -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -308,6 +307,41 @@
     margin-bottom: 16px;
   }
 
+  /* --- IMPACT & PROFILING METRICS BOX --- */
+  .impact-box {
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,227,235,0.6) 100%);
+    border-radius: 28px;
+    padding: 35px;
+    border: 1px solid var(--pink-light);
+    box-shadow: var(--shadow);
+    margin-top: 30px;
+  }
+
+  .impact-metric {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 77, 121, 0.15);
+  }
+
+  .impact-metric:last-child {
+    border-bottom: none;
+  }
+
+  .metric-icon {
+    font-size: 24px;
+    color: var(--pink-dark);
+    background: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+
   /* --- SLIDESHOW SECTION --- */
   .slideshow-container {
     background: var(--bg-card);
@@ -438,19 +472,18 @@
 
 <body>
 
-  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="brand"><i class="fa-solid fa-layer-group"></i> WESTERN ESTATE</div>
     <div class="nav-links">
       <a href="#hero" class="nav-link">Home</a>
       <a href="#problem-solution" class="nav-link">Overview</a>
       <a href="#mauli" class="nav-link">MAULI AI</a>
+      <a href="#efficiency" class="nav-link">Efficiency & Data</a>
       <a href="#about" class="nav-link">About</a>
       <a href="#contact" class="nav-link">Contact</a>
     </div>
   </nav>
 
-  <!-- HERO SECTION WITH DASHBOARD IMAGE -->
   <div class="hero-wrapper" id="hero">
     <div class="hero">
       <div class="hero-content">
@@ -465,7 +498,6 @@
     </div>
   </div>
 
-  <!-- OVERVIEW SECTION -->
   <div class="container" id="problem-solution">
     <div class="section-title">
       <h2>Transforming Governance</h2>
@@ -497,7 +529,6 @@
     </div>
   </div>
 
-  <!-- MAULI MAIN FOCUS SECTION -->
   <div class="container" id="mauli">
     <div class="section-title">
       <h2>Meet MAULI</h2>
@@ -510,7 +541,6 @@
       <p>By transforming raw public complaints into structured data points, MAULI empowers public representatives and decision-makers to handle mass grievances proactively rather than reactively.</p>
     </div>
 
-    <!-- MAULI CORE CAPABILITIES GRID -->
     <div class="grid-3" style="margin-bottom: 50px;">
       <div class="card">
         <div class="card-icon"><i class="fa-solid fa-comments"></i></div>
@@ -531,14 +561,12 @@
       </div>
     </div>
 
-    <!-- MAULI INTERACTIVE SLIDESHOW -->
     <div class="slideshow-container">
       <div style="margin-bottom: 24px;">
         <span style="color: var(--pink-accent); font-weight: 700; font-size: 13px; text-transform: uppercase;">Interactive Breakdown</span>
         <h3 style="font-size: 24px; font-weight: 800;">How MAULI Works</h3>
       </div>
 
-      <!-- SLIDE 1: MANAGEMENT -->
       <div class="slide active">
         <div class="slide-visual">
           <img src="managemen.gif" alt="Managemen GIF" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -554,7 +582,6 @@
         </div>
       </div>
 
-      <!-- SLIDE 2: AUTOMATION -->
       <div class="slide">
         <div class="slide-visual">
           <img src="autotask.gif" alt="AutoTask GIF" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -570,7 +597,6 @@
         </div>
       </div>
 
-      <!-- SLIDE 3: UNIT -->
       <div class="slide">
         <div class="slide-visual">
           <img src="unite.gif" alt="Unite GIF" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -586,7 +612,6 @@
         </div>
       </div>
 
-      <!-- SLIDE 4: LOCAL -->
       <div class="slide">
         <div class="slide-visual">
           <img src="local.gif" alt="Local GIF" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -602,7 +627,6 @@
         </div>
       </div>
 
-      <!-- SLIDE 5: ISSUES -->
       <div class="slide">
         <div class="slide-visual">
           <img src="workflow.gif" alt="Workflow GIF" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -618,7 +642,6 @@
         </div>
       </div>
 
-      <!-- CONTROLS -->
       <div class="slideshow-controls">
         <button class="btn btn-secondary" onclick="prevSlide()" style="background: var(--pink-light); color: var(--pink-dark); border: none;"><i class="fa-solid fa-arrow-left"></i> Previous</button>
         <div class="slide-dots">
@@ -633,7 +656,73 @@
     </div>
   </div>
 
-  <!-- ABOUT SECTION -->
+  <div class="container" id="efficiency">
+    <div class="section-title">
+      <h2>Efficiency, Intelligence & Profiling</h2>
+      <p>How data transforms reactive administration into proactive, high-precision decision-making.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-gauge-high"></i></div>
+        <h3>System Efficiency & Effectiveness</h3>
+        <p>By automating manual data entry, ticket sorting, and departmental hand-offs, MAULI eliminates bureaucratic friction entirely:</p>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>Zero Triage Delays:</strong> AI auto-categorizes incoming issues within seconds of submission.</li>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>SLA & SLA Tracking:</strong> Automatic reminders keep departments accountable to strict resolution timelines.</li>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>Resource Optimization:</strong> Prevents duplicate work by grouping similar complaints from the same locality into single actionable work-orders.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+        <h3>Data-Driven Decision Making</h3>
+        <p>Instead of guessing community needs, leaders access real-time statistical insight to allocate funds and manpower effectively:</p>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>Predictive Governance:</strong> Spot failure patterns in infrastructure (e.g., water/electricity) before widespread outages occur.</li>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>Budget Allocation:</strong> Direct public funds precisely to wards displaying high issue density and systemic distress.</li>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>Department Auditing:</strong> Evaluate department response rates objectively using real resolution metrics.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="impact-box">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+        <div style="background: var(--pink-gradient); color: white; width: 48px; height: 48px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+          <i class="fa-solid fa-id-card"></i>
+        </div>
+        <div>
+          <h3 style="font-size: 24px; font-weight: 800;">Constituency & Locality Profiling</h3>
+          <p style="color: var(--text-muted); font-size: 15px;">Building a complete digital intelligence map of citizen demographics, needs, and systemic vulnerabilities.</p>
+        </div>
+      </div>
+
+      <div class="impact-metric">
+        <div class="metric-icon"><i class="fa-solid fa-map-pin"></i></div>
+        <div>
+          <h4 style="font-size: 17px; font-weight: 700;">Geo-Spatial Problem Mapping</h4>
+          <p style="color: var(--text-muted); font-size: 14px;">Every issue generates a geographic footprint. MAULI aggregates this data to create live heatmaps of water, road, electricity, or sanitation vulnerabilities across wards.</p>
+        </div>
+      </div>
+
+      <div class="impact-metric">
+        <div class="metric-icon"><i class="fa-solid fa-users"></i></div>
+        <div>
+          <h4 style="font-size: 17px; font-weight: 700;">Citizen Need Profiling</h4>
+          <p style="color: var(--text-muted); font-size: 14px;">Understand what specific demographics care about most. Tracks recurring requests, sentiment trends, and community satisfaction to tailor policy effectively.</p>
+        </div>
+      </div>
+
+      <div class="impact-metric">
+        <div class="metric-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div>
+          <h4 style="font-size: 17px; font-weight: 700;">Historical Trend Analysis</h4>
+          <p style="color: var(--text-muted); font-size: 14px;">Store full administrative history across months and years to track long-term ward developments and measure the real-world impact of public policy investments.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="container" id="about">
     <div class="card" style="max-width: 900px; margin: 0 auto;">
       <div class="card-icon"><i class="fa-solid fa-building-user"></i></div>
@@ -643,7 +732,6 @@
     </div>
   </div>
 
-  <!-- CONTACT SECTION -->
   <div class="container" id="contact">
     <div class="card" style="max-width: 650px; margin: 0 auto; text-align: center;">
       <div class="card-icon" style="margin: 0 auto 20px;"><i class="fa-solid fa-paper-plane"></i></div>
@@ -657,12 +745,10 @@
     </div>
   </div>
 
-  <!-- FLOATING WHATSAPP -->
   <a href="https://wa.me/917774049999" class="whatsapp-float" target="_blank">
     <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> Chat on WhatsApp
   </a>
 
-  <!-- FOOTER -->
   <footer>
     © 2026 Western Estate — Governance Intelligence Platform
   </footer>
