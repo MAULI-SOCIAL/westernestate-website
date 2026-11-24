@@ -3,26 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Western Estate — MAULI Governance Platform</title>
+<title>Western Estate — MAULI Enterprise Governance & Constituency OS</title>
 
 <!-- Google Fonts & Font Awesome Icons -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
   :root {
     --bg-primary: #fff2f5;
-    --bg-card: rgba(255, 255, 255, 0.75);
+    --bg-card: rgba(255, 255, 255, 0.78);
     --pink-accent: #ff4d79;
     --pink-dark: #d81b60;
     --pink-light: #ffe3eb;
-    --pink-gradient: linear-gradient(135deg, #ff6b8b 0%, #ff3b68 100%);
+    --pink-gradient: linear-gradient(135deg, #ff6b8b 0%, #d81b60 100%);
+    --dark-gradient: linear-gradient(135deg, #2a1f2d 0%, #44273e 100%);
     --text-dark: #2a1f2d;
     --text-muted: #6b586e;
-    --glass-border: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(255, 255, 255, 0.92);
     --shadow: 0 20px 40px rgba(255, 77, 121, 0.12);
+    --shadow-hover: 0 28px 50px rgba(216, 27, 96, 0.18);
   }
 
   * {
@@ -43,6 +45,10 @@
     overflow-x: hidden;
   }
 
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
   /* --- NAVBAR --- */
   .navbar {
     position: sticky;
@@ -51,9 +57,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 14px 8%;
-    background: rgba(255, 242, 245, 0.85);
-    backdrop-filter: blur(16px);
+    padding: 14px 6%;
+    background: rgba(255, 242, 245, 0.88);
+    backdrop-filter: blur(18px);
     border-bottom: 1px solid var(--pink-light);
   }
 
@@ -65,7 +71,7 @@
 
   .brand {
     font-weight: 800;
-    font-size: 20px;
+    font-size: 19px;
     letter-spacing: -0.5px;
     color: var(--pink-accent);
     display: flex;
@@ -80,7 +86,7 @@
   }
 
   .mauli-nav-logo {
-    height: 38px;
+    height: 36px;
     width: auto;
     object-fit: contain;
     border-radius: 8px;
@@ -89,15 +95,16 @@
 
   .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
   }
 
   .nav-link {
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     color: var(--text-muted);
-    padding: 8px 16px;
+    padding: 8px 14px;
     border-radius: 20px;
     transition: all 0.3s ease;
   }
@@ -109,8 +116,8 @@
 
   /* --- HERO SECTION WITH DASHBOARD BACKGROUND --- */
   .hero-wrapper {
-    padding: 40px 20px;
-    max-width: 1200px;
+    padding: 36px 20px;
+    max-width: 1240px;
     margin: 0 auto;
   }
 
@@ -118,26 +125,25 @@
     position: relative;
     border-radius: 36px;
     overflow: hidden;
-    padding: 100px 40px;
+    padding: 95px 40px 80px;
     text-align: center;
     background: url('dashboard.jpg') center/cover no-repeat;
     box-shadow: var(--shadow);
     border: 1px solid var(--glass-border);
   }
 
-  /* Dark + Pink Overlay for text legibility over dashboard.jpg */
   .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(42, 31, 45, 0.78) 0%, rgba(216, 27, 96, 0.65) 100%);
+    background: linear-gradient(160deg, rgba(30, 20, 34, 0.86) 0%, rgba(168, 19, 75, 0.76) 100%);
     backdrop-filter: blur(4px);
   }
 
   .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    max-width: 880px;
     margin: 0 auto;
     color: white;
   }
@@ -145,16 +151,16 @@
   .tagline-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     color: #fff;
-    padding: 6px 20px;
+    padding: 7px 22px;
     border-radius: 50px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
+    letter-spacing: 1.2px;
+    margin-bottom: 22px;
     text-transform: uppercase;
   }
 
@@ -165,18 +171,22 @@
   }
 
   .hero h1 {
-    font-size: 48px;
+    font-size: 46px;
     font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 16px;
-    text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    line-height: 1.18;
+    margin-bottom: 18px;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    letter-spacing: -0.5px;
   }
 
   .hero p {
     font-size: 18px;
     color: rgba(255, 255, 255, 0.92);
-    margin-bottom: 32px;
+    margin-bottom: 34px;
     font-weight: 400;
+    max-width: 740px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .cta-group {
@@ -184,6 +194,7 @@
     justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
+    margin-bottom: 45px;
   }
 
   .btn {
@@ -197,13 +208,13 @@
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 9px;
   }
 
   .btn-primary {
     background: white;
     color: var(--pink-dark);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   }
 
   .btn-primary:hover {
@@ -212,7 +223,7 @@
   }
 
   .btn-secondary {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.14);
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
@@ -222,32 +233,83 @@
     background: rgba(255, 255, 255, 0.25);
   }
 
+  /* HERO TELEMETRY STRIP */
+  .hero-telemetry {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    padding: 20px;
+    text-align: left;
+  }
+
+  .telemetry-item {
+    border-right: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 0 12px;
+  }
+
+  .telemetry-item:last-child {
+    border-right: none;
+  }
+
+  .telemetry-val {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    display: block;
+  }
+
+  .telemetry-lbl {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.82);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    font-weight: 600;
+  }
+
   /* --- GENERAL SECTIONS --- */
   .container {
-    max-width: 1100px;
+    max-width: 1160px;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: 65px 20px;
   }
 
   .section-title {
     text-align: center;
-    margin-bottom: 45px;
+    margin-bottom: 48px;
+  }
+
+  .section-eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--pink-accent);
+    background: var(--pink-light);
+    padding: 5px 16px;
+    border-radius: 50px;
+    margin-bottom: 12px;
   }
 
   .section-title h2 {
-    font-size: 34px;
+    font-size: 36px;
     font-weight: 800;
     color: var(--text-dark);
+    letter-spacing: -0.4px;
   }
 
   .section-title p {
     color: var(--text-muted);
     font-size: 16px;
-    max-width: 600px;
-    margin: 8px auto 0;
+    max-width: 660px;
+    margin: 10px auto 0;
   }
 
-  /* --- CARDS & GRID --- */
+  /* --- CARDS & GRIDS --- */
   .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -266,12 +328,22 @@
     border: 1px solid var(--glass-border);
     box-shadow: var(--shadow);
     border-radius: 28px;
-    padding: 36px;
-    transition: all 0.3s ease;
+    padding: 34px;
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
   }
 
   .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 22px;
   }
 
   .card-icon {
@@ -284,17 +356,28 @@
     align-items: center;
     justify-content: center;
     font-size: 22px;
-    margin-bottom: 24px;
+  }
+
+  .module-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--pink-dark);
+    background: rgba(255, 77, 121, 0.1);
+    border: 1px solid rgba(255, 77, 121, 0.25);
+    padding: 4px 10px;
+    border-radius: 8px;
   }
 
   .card h3 {
-    font-size: 22px;
+    font-size: 21px;
+    font-weight: 800;
     margin-bottom: 12px;
+    color: var(--text-dark);
   }
 
   .card p, .card ul {
     color: var(--text-muted);
-    font-size: 15px;
+    font-size: 14.5px;
   }
 
   .card ul {
@@ -312,19 +395,39 @@
   .card ul li i {
     color: var(--pink-accent);
     margin-top: 4px;
+    font-size: 13px;
   }
 
-  /* --- MAULI DETAILED DEEP DIVE & BRAND SHOWCASE --- */
+  .tech-pill-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(255, 77, 121, 0.2);
+  }
+
+  .tech-pill {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-dark);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--pink-light);
+    padding: 3px 10px;
+    border-radius: 6px;
+  }
+
+  /* --- MAULI BRAND SHOWCASE --- */
   .mauli-brand-showcase {
     display: grid;
-    grid-template-columns: 340px 1fr;
+    grid-template-columns: 330px 1fr;
     gap: 30px;
     align-items: stretch;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
   }
 
   .mauli-logo-card {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.92);
     border-radius: 32px;
     padding: 30px;
     display: flex;
@@ -341,11 +444,11 @@
   .mauli-logo-card::before {
     content: "";
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
     background: var(--pink-accent);
-    filter: blur(70px);
-    opacity: 0.15;
+    filter: blur(75px);
+    opacity: 0.18;
     border-radius: 50%;
     z-index: 0;
   }
@@ -353,12 +456,24 @@
   .mauli-main-logo {
     max-width: 100%;
     height: auto;
-    max-height: 180px;
+    max-height: 175px;
     object-fit: contain;
     position: relative;
     z-index: 1;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
     animation: float 4s ease-in-out infinite;
+  }
+
+  .os-badge-sub {
+    margin-top: 16px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--pink-dark);
+    background: var(--pink-light);
+    padding: 5px 14px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
   }
 
   @keyframes float {
@@ -370,7 +485,7 @@
     background: var(--pink-gradient);
     color: white;
     border-radius: 32px;
-    padding: 45px;
+    padding: 44px;
     box-shadow: 0 20px 50px rgba(255, 77, 121, 0.25);
     display: flex;
     flex-direction: column;
@@ -379,12 +494,13 @@
 
   .mauli-hero-card h3 {
     font-size: 28px;
+    font-weight: 800;
     margin-bottom: 16px;
   }
 
   .mauli-hero-card p {
     color: rgba(255, 255, 255, 0.95);
-    font-size: 16px;
+    font-size: 15.5px;
     line-height: 1.7;
     margin-bottom: 16px;
   }
@@ -393,39 +509,153 @@
     margin-bottom: 0;
   }
 
-  /* --- IMPACT & PROFILING METRICS BOX --- */
-  .impact-box {
-    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,227,235,0.6) 100%);
-    border-radius: 28px;
-    padding: 35px;
-    border: 1px solid var(--pink-light);
-    box-shadow: var(--shadow);
-    margin-top: 30px;
+  /* --- ML & DATA PIPELINE ARCHITECTURE SECTION --- */
+  .ml-engine-wrapper {
+    background: var(--dark-gradient);
+    color: white;
+    border-radius: 36px;
+    padding: 50px 42px;
+    box-shadow: 0 25px 60px rgba(42, 31, 45, 0.25);
+    position: relative;
+    overflow: hidden;
   }
 
-  .impact-metric {
-    display: flex;
-    align-items: center;
+  .ml-engine-wrapper::after {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 300px;
+    height: 300px;
+    background: var(--pink-accent);
+    filter: blur(120px);
+    opacity: 0.25;
+    pointer-events: none;
+  }
+
+  .pipeline-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(255, 77, 121, 0.15);
+    margin-top: 36px;
+    position: relative;
+    z-index: 2;
   }
 
-  .impact-metric:last-child {
-    border-bottom: none;
+  .pipeline-step {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 22px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
   }
 
-  .metric-icon {
-    font-size: 24px;
-    color: var(--pink-dark);
-    background: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+  .pipeline-step:hover {
+    background: rgba(255, 255, 255, 0.11);
+    border-color: var(--pink-accent);
+    transform: translateY(-4px);
+  }
+
+  .step-num {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ff85a2;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .pipeline-step h4 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  .pipeline-step p {
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.6;
+  }
+
+  /* --- INTERACTIVE SIMULATOR / CAMPAIGN & CONSTITUENCY MATRIX --- */
+  .matrix-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .matrix-tab-btn {
+    padding: 11px 22px;
+    border-radius: 50px;
+    border: 1px solid var(--pink-light);
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--text-muted);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .matrix-tab-btn.active, .matrix-tab-btn:hover {
+    background: var(--pink-gradient);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 8px 20px rgba(255, 77, 121, 0.25);
+  }
+
+  .matrix-panel {
+    display: none;
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    padding: 38px;
+    box-shadow: var(--shadow);
+    animation: fadeIn 0.35s ease;
+  }
+
+  .matrix-panel.active {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .terminal-card {
+    background: #1e1621;
+    color: #f8e8ee;
+    border-radius: 22px;
+    padding: 24px;
+    font-size: 13px;
+    border: 1px solid rgba(255, 77, 121, 0.35);
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .terminal-header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    gap: 8px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .t-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .t-red { background: #ff5f56; }
+  .t-yellow { background: #ffbd2e; }
+  .t-green { background: #27c93f; }
+
+  .terminal-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+  }
+
+  .terminal-row:last-child {
+    border-bottom: none;
   }
 
   /* --- SLIDESHOW SECTION --- */
@@ -516,6 +746,41 @@
     border-radius: 10px;
   }
 
+  /* --- IMPACT & PROFILING METRICS BOX --- */
+  .impact-box {
+    background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(255,227,235,0.65) 100%);
+    border-radius: 28px;
+    padding: 36px;
+    border: 1px solid var(--pink-light);
+    box-shadow: var(--shadow);
+    margin-top: 30px;
+  }
+
+  .impact-metric {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255, 77, 121, 0.15);
+  }
+
+  .impact-metric:last-child {
+    border-bottom: none;
+  }
+
+  .metric-icon {
+    font-size: 22px;
+    color: var(--pink-dark);
+    background: white;
+    min-width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+
   /* --- WHATSAPP FLOAT --- */
   .whatsapp-float {
     position: fixed;
@@ -528,7 +793,7 @@
     text-decoration: none;
     font-weight: 700;
     font-size: 14px;
-    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -546,12 +811,18 @@
     color: var(--text-muted);
     font-size: 14px;
     border-top: 1px solid var(--pink-light);
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.45);
   }
 
-  @media (max-width: 900px) {
-    .grid-2, .grid-3, .slide, .mauli-brand-showcase { grid-template-columns: 1fr; }
+  @media (max-width: 960px) {
+    .grid-2, .grid-3, .slide, .mauli-brand-showcase, .matrix-panel.active { grid-template-columns: 1fr; }
+    .pipeline-grid, .hero-telemetry { grid-template-columns: 1fr 1fr; }
     .hero h1 { font-size: 34px; }
+    .telemetry-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 10px; }
+  }
+
+  @media (max-width: 560px) {
+    .pipeline-grid, .hero-telemetry { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -567,11 +838,11 @@
     </div>
     <div class="nav-links">
       <a href="#hero" class="nav-link">Home</a>
-      <a href="#problem-solution" class="nav-link">Overview</a>
-      <a href="#mauli" class="nav-link">MAULI </a>
-      <a href="#efficiency" class="nav-link">Efficiency & Data</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#suite" class="nav-link">SaaS Ecosystem</a>
+      <a href="#mauli" class="nav-link">MAULI OS</a>
+      <a href="#ml-engine" class="nav-link">ML & Campaign AI</a>
+      <a href="#efficiency" class="nav-link">Intelligence</a>
+      <a href="#contact" class="nav-link">Deploy</a>
     </div>
   </nav>
 
@@ -580,46 +851,159 @@
     <div class="hero">
       <div class="hero-content">
         <span class="tagline-badge">
-          <img src="MAULI.png" alt="MAULI Icon"> Governance Intelligence Platform
+          <img src="MAULI.png" alt="MAULI Icon"> Full-Stack Constituency Operating System
         </span>
-        <h1>Smart Public Administration & Grievance Operating System</h1>
-        <p>Enabling constituency-scale grievance redressal, deep machine analytics, institutional transparency, and automated public governance.</p>
+        <h1>Enterprise Governance, ML Campaign Strategy & Civic Intelligence OS</h1>
+        <p>Unifying multi-dimensional demographic surveying, real-time project telemetry, hierarchical workforce command, automated grievance redressal, and heavy machine-learning constituency modeling into one unified platform.</p>
         <div class="cta-group">
-          <a href="#mauli" class="btn btn-primary"><i class="fa-solid fa-brain"></i> Explore MAULI Platform</a>
-          <a href="#contact" class="btn btn-secondary"><i class="fa-solid fa-headset"></i> Contact Us</a>
+          <a href="#suite" class="btn btn-primary"><i class="fa-solid fa-cubes"></i> Explore 6-Module SaaS Suite</a>
+          <a href="#ml-engine" class="btn btn-secondary"><i class="fa-solid fa-microchip"></i> View ML Architecture</a>
+        </div>
+
+        <!-- LIVE ENTERPRISE TELEMETRY BAR -->
+        <div class="hero-telemetry">
+          <div class="telemetry-item">
+            <span class="telemetry-val mono">6+ Core</span>
+            <span class="telemetry-lbl">Integrated SaaS Engines</span>
+          </div>
+          <div class="telemetry-item">
+            <span class="telemetry-val mono">Booth-Level</span>
+            <span class="telemetry-lbl">Geo-Spatial Granularity</span>
+          </div>
+          <div class="telemetry-item">
+            <span class="telemetry-val mono">Custom ML</span>
+            <span class="telemetry-lbl">Heavy Data Pipelines</span>
+          </div>
+          <div class="telemetry-item">
+            <span class="telemetry-val mono">Real-Time</span>
+            <span class="telemetry-lbl">Command & SLA Telemetry</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- OVERVIEW SECTION -->
-  <div class="container" id="problem-solution">
+  <!-- ENTERPRISE SAAS PRODUCT SUITE (6 INTEGRATED MODULES) -->
+  <div class="container" id="suite">
     <div class="section-title">
-      <h2>Transforming Governance</h2>
-      <p>Moving public administration from slow manual processes to intelligent automated solutions.</p>
+      <span class="section-eyebrow">Unified SaaS Ecosystem</span>
+      <h2>End-to-End Governance & Political Intelligence Suite</h2>
+      <p>Far beyond simple ticketing—Western Estate delivers an interconnected operating system engineered for constituencies, public offices, and large-scale field operations.</p>
     </div>
 
-    <div class="grid-2">
+    <div class="grid-3">
+      <!-- MODULE 1: CONSTITUENCY OPERATING SYSTEM -->
       <div class="card">
-        <div class="card-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-        <h3>The Governance Problem</h3>
-        <p>As populations grow, manual grievance handling fails to scale. Fragmented communication, unorganized data, and manual sorting cause critical bottlenecks:</p>
+        <div class="card-header-row">
+          <div class="card-icon"><i class="fa-solid fa-server"></i></div>
+          <span class="module-tag mono">CORE // OS-01</span>
+        </div>
+        <h3>Constituency Operating System</h3>
+        <p>A centralized digital command backbone synchronizing booth-level demographics, civic infrastructure records, stakeholder registries, and daily administrative workflows.</p>
         <ul>
-          <li><i class="fa-solid fa-xmark" style="color:#ff3b68;"></i> Delayed complaint resolution times causing public dissatisfaction</li>
-          <li><i class="fa-solid fa-xmark" style="color:#ff3b68;"></i> Lack of real-time tracking transparency for citizens</li>
-          <li><i class="fa-solid fa-xmark" style="color:#ff3b68;"></i> No centralized data analytics to spot recurring local issues</li>
+          <li><i class="fa-solid fa-circle-check"></i> Ward-to-booth hierarchical data architecture</li>
+          <li><i class="fa-solid fa-circle-check"></i> Cross-module identity & voter-citizen graph</li>
         </ul>
+        <div class="tech-pill-group mono">
+          <span class="tech-pill">Multi-Tenant RBAC</span>
+          <span class="tech-pill">Geo-Fencing</span>
+          <span class="tech-pill">Audit Logs</span>
+        </div>
       </div>
 
+      <!-- MODULE 2: DEMOGRAPHIC SURVEYING SOFTWARE -->
       <div class="card">
-        <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
-        <h3>The Tech-Driven Solution</h3>
-        <p>Our platform automates intake, structures unstructured data, and intelligently routes tasks directly to relevant administrative units:</p>
+        <div class="card-header-row">
+          <div class="card-icon"><i class="fa-solid fa-clipboard-question"></i></div>
+          <span class="module-tag mono">DATA // SRV-02</span>
+        </div>
+        <h3>Demographic Surveying Software</h3>
+        <p>High-throughput field data collection engine with dynamic branching logic, GPS verification, offline sync, and automated anomaly detection to eliminate enumerator bias.</p>
         <ul>
-          <li><i class="fa-solid fa-circle-check"></i> <strong>Automated Sorting:</strong> Instant AI tagging and ticket prioritization</li>
-          <li><i class="fa-solid fa-circle-check"></i> <strong>Live Lifecycle Tracking:</strong> Transparent updates for citizens & officers</li>
-          <li><i class="fa-solid fa-circle-check"></i> <strong>Constituency Analytics:</strong> Automated heatmap insights for intervention</li>
+          <li><i class="fa-solid fa-circle-check"></i> Socio-economic & household micro-profiling</li>
+          <li><i class="fa-solid fa-circle-check"></i> Real-time voice, geo-tag & timestamp validation</li>
         </ul>
+        <div class="tech-pill-group mono">
+          <span class="tech-pill">Offline-First Sync</span>
+          <span class="tech-pill">Fraud Telemetry</span>
+          <span class="tech-pill">CAPI Engine</span>
+        </div>
+      </div>
+
+      <!-- MODULE 3: ML CAMPAIGN STRATEGY ENGINE -->
+      <div class="card">
+        <div class="card-header-row">
+          <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+          <span class="module-tag mono">AI // CMP-03</span>
+        </div>
+        <h3>ML Campaign Strategy Planning</h3>
+        <p>Heavy custom data processing pipelines executing predictive voter sentiment clustering, swing-booth elasticity modeling, and hyper-local outreach resource optimization.</p>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> Constituency-wise predictive issue & mood scoring</li>
+          <li><i class="fa-solid fa-circle-check"></i> Micro-targeted messaging & booth prioritization</li>
+        </ul>
+        <div class="tech-pill-group mono">
+          <span class="tech-pill">Gradient Boosting</span>
+          <span class="tech-pill">NLP Sentiment</span>
+          <span class="tech-pill">Propensity Models</span>
+        </div>
+      </div>
+
+      <!-- MODULE 4: PROJECT ANALYTICS & TRACKING DASHBOARDS -->
+      <div class="card">
+        <div class="card-header-row">
+          <div class="card-icon"><i class="fa-solid fa-chart-pie"></i></div>
+          <span class="module-tag mono">OPS // PRJ-04</span>
+        </div>
+        <h3>Project Analytics & Tracking Dashboards</h3>
+        <p>Executive telemetry for public works, MPLAD/MLA fund utilization, contractor milestones, budget burn-rates, and geo-tagged visual progress verification.</p>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> Milestone variance & bottleneck forecasting</li>
+          <li><i class="fa-solid fa-circle-check"></i> Ward-wise capital expenditure heatmaps</li>
+        </ul>
+        <div class="tech-pill-group mono">
+          <span class="tech-pill">Live KPI Streams</span>
+          <span class="tech-pill">Fund Ledger</span>
+          <span class="tech-pill">GIS Overlays</span>
+        </div>
+      </div>
+
+      <!-- MODULE 5: TEAM & FIELD WORKFORCE MANAGEMENT -->
+      <div class="card">
+        <div class="card-header-row">
+          <div class="card-icon"><i class="fa-solid fa-users-gear"></i></div>
+          <span class="module-tag mono">EXEC // TM-05</span>
+        </div>
+        <h3>Team & Cadre Management</h3>
+        <p>Structured command-and-control software for field coordinators, booth presidents, and back-office analysts with GPS route tracking, task quotas, and performance scoring.</p>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> Automated task delegation & attendance geofencing</li>
+          <li><i class="fa-solid fa-circle-check"></i> Real-time worker productivity & conversion leaderboards</li>
+        </ul>
+        <div class="tech-pill-group mono">
+          <span class="tech-pill">Shift Telemetry</span>
+          <span class="tech-pill">Hierarchy Tree</span>
+          <span class="tech-pill">SLA Alerts</span>
+        </div>
+      </div>
+
+      <!-- MODULE 6: AUTOMATED GRIEVANCE REDRESSAL -->
+      <div class="card">
+        <div class="card-header-row">
+          <div class="card-icon"><i class="fa-solid fa-headset"></i></div>
+          <span class="module-tag mono">CIVIC // GRV-06</span>
+        </div>
+        <h3>AI Grievance Redressal Software</h3>
+        <p>Omnichannel citizen intake (WhatsApp, Voice, Web, Camp) powered by NLP auto-classification, departmental SLA escalation, and automated beneficiary feedback loops.</p>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> Multi-lingual complaint parsing & deduplication</li>
+          <li><i class="fa-solid fa-circle-check"></i> Closed-loop citizen satisfaction verification</li>
+        </ul>
+        <div class="tech-pill-group mono">
+          <span class="tech-pill">NLP Triage</span>
+          <span class="tech-pill">WhatsApp API</span>
+          <span class="tech-pill">Auto-Escalation</span>
+        </div>
       </div>
     </div>
   </div>
@@ -627,48 +1011,29 @@
   <!-- MAULI MAIN FOCUS SECTION -->
   <div class="container" id="mauli">
     <div class="section-title">
-      <h2>Meet MAULI</h2>
-      <p><strong>M</strong>anagement & <strong>A</strong>utomation <strong>U</strong>nit for <strong>L</strong>ocal <strong>I</strong>ssues</p>
+      <span class="section-eyebrow">Flagship Architecture</span>
+      <h2>Meet MAULI OS</h2>
+      <p><strong>M</strong>anagement & <strong>A</strong>utomation <strong>U</strong>nit for <strong>L</strong>ocal <strong>I</strong>ssues — Now Expanded into a Multi-Modal Intelligence Core</p>
     </div>
 
     <!-- BRAND SHOWCASE (LOGO + OVERVIEW) -->
     <div class="mauli-brand-showcase">
       <div class="mauli-logo-card">
         <img src="MAULI.png" alt="MAULI Flagship Governance System Logo" class="mauli-main-logo">
+        <span class="os-badge-sub mono">ENTERPRISE KERNEL v4.2</span>
       </div>
       <div class="mauli-hero-card">
-        <h3>Constituency-Scale AI Governance Operating System</h3>
-        <p>MAULI is a dedicated AI software suite engineered to manage vast administrative workloads with corporate headquarters efficiency. It collects citizen inputs, extracts issue categories, structures workloads, and generates real-time actionable intelligence.</p>
-        <p>By transforming raw public complaints into structured data points, MAULI empowers public representatives and decision-makers to handle mass grievances proactively rather than reactively.</p>
-      </div>
-    </div>
-
-    <!-- MAULI CORE CAPABILITIES GRID -->
-    <div class="grid-3" style="margin-bottom: 50px;">
-      <div class="card">
-        <div class="card-icon"><i class="fa-solid fa-comments"></i></div>
-        <h3>Mass Redressal</h3>
-        <p>Processes thousands of incoming citizen inputs effortlessly, unifying WhatsApp, web forms, and field notes into structured records.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-icon"><i class="fa-solid fa-network-wired"></i></div>
-        <h3>Intelligent Routing</h3>
-        <p>Uses Natural Language Processing to direct tickets directly to relevant departments without manual triage delays.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
-        <h3>Data Intelligence</h3>
-        <p>Generates real-time analytical dashboards showing local issue hotspots, pendency rates, and resolution efficiency.</p>
+        <h3>Unified Neural & Operational Backbone for Constituencies</h3>
+        <p>MAULI acts as the central nervous system connecting ground-level demographic surveys, field team execution, infrastructure project tracking, and citizen grievance streams into a single normalized data lake.</p>
+        <p>Instead of isolated spreadsheets and disconnected tools, every survey response, resolved complaint, and completed civic project continuously retrains our constituency-specific ML models—giving decision-makers unmatched strategic foresight.</p>
       </div>
     </div>
 
     <!-- MAULI INTERACTIVE SLIDESHOW -->
     <div class="slideshow-container">
       <div style="margin-bottom: 24px;">
-        <span style="color: var(--pink-accent); font-weight: 700; font-size: 13px; text-transform: uppercase;">Interactive Breakdown</span>
-        <h3 style="font-size: 24px; font-weight: 800;">How MAULI Works</h3>
+        <span style="color: var(--pink-accent); font-weight: 700; font-size: 13px; text-transform: uppercase;">System Kernel Walkthrough</span>
+        <h3 style="font-size: 24px; font-weight: 800;">How the MAULI Architecture Operates</h3>
       </div>
 
       <!-- SLIDE 1: MANAGEMENT -->
@@ -682,8 +1047,8 @@
         </div>
         <div class="slide-content">
           <span style="color: var(--pink-accent); font-weight: 800;">M — MANAGEMENT</span>
-          <h4>Unified Command & Oversight</h4>
-          <p>MAULI connects multiple governance departments into a single dashboard command center. Leadership can monitor, manage, and assign responsibility across local administrative bodies seamlessly.</p>
+          <h4>Unified Command, Projects & Workforce Oversight</h4>
+          <p>MAULI synchronizes administrative departments, field campaign teams, and infrastructure project trackers inside one executive command center. Leaders monitor budgets, field cadre KPIs, and departmental SLAs simultaneously.</p>
         </div>
       </div>
 
@@ -698,8 +1063,8 @@
         </div>
         <div class="slide-content">
           <span style="color: var(--pink-accent); font-weight: 800;">A — AUTOMATION</span>
-          <h4>Auto Task Structuring</h4>
-          <p>Recurring issues and repetitive workflows are handled automatically by AI models. Complaints are instant-tagged, summarized, prioritized, and converted into action items without manual intervention.</p>
+          <h4>Heavy Data Ingestion & ML Pipeline Automation</h4>
+          <p>Raw survey datasets, citizen complaints, and historical electoral rolls are automatically cleaned, entity-resolved, and processed through custom ML pipelines to surface actionable campaign and governance triggers.</p>
         </div>
       </div>
 
@@ -714,8 +1079,8 @@
         </div>
         <div class="slide-content">
           <span style="color: var(--pink-accent); font-weight: 800;">U — UNIT</span>
-          <h4>Units for Field Resolution</h4>
-          <p>Equips operational teams with real-time data to resolve complaints efficiently. Departmental teams collaborate seamlessly while generating analytical metrics for performance assessment.</p>
+          <h4>Synchronized Field & Operational Units</h4>
+          <p>Connects survey enumerators, booth-level field workers, and municipal resolution teams with mobile tasking, geo-verified check-ins, and real-time performance telemetry.</p>
         </div>
       </div>
 
@@ -730,8 +1095,8 @@
         </div>
         <div class="slide-content">
           <span style="color: var(--pink-accent); font-weight: 800;">L — LOCAL</span>
-          <h4>Local Area Mapping</h4>
-          <p>Pinpoints grievance occurrences on precise geographical maps. Identify recurring infrastructural or civic issues down to specific neighborhoods and wards.</p>
+          <h4>Hyper-Local Booth & GIS Spatial Intelligence</h4>
+          <p>Maps demographic shifts, infrastructure project density, and unresolved civic friction down to individual polling booths, wards, and street clusters for precision resource deployment.</p>
         </div>
       </div>
 
@@ -745,9 +1110,9 @@
           </div>
         </div>
         <div class="slide-content">
-          <span style="color: var(--pink-accent); font-weight: 800;">I — ISSUES </span>
-          <h4> Issues of Citizens </h4>
-          <p>Captures citizen voices directly, converting unstructured complaint messages into clear, actionable tracking tickets from initial filing to verified resolution.</p>
+          <span style="color: var(--pink-accent); font-weight: 800;">I — ISSUES & STRATEGY</span>
+          <h4>Closed-Loop Issue Redressal & Strategic Forecasting</h4>
+          <p>Transforms citizen feedback and survey sentiment into measurable policy interventions—tracking every issue from initial capture to verified resolution and voter sentiment lift.</p>
         </div>
       </div>
 
@@ -761,77 +1126,198 @@
           <span class="dot" onclick="setSlide(3)"></span>
           <span class="dot" onclick="setSlide(4)"></span>
         </div>
-        <button class="btn btn-primary" onclick="nextSlide()" style="background: var(--pink-gradient); color: white;">Next Step <i class="fa-solid fa-arrow-right"></i></button>
+        <button class="btn btn-primary" onclick="nextSlide()" style="background: var(--pink-gradient); color: white;">Next Module <i class="fa-solid fa-arrow-right"></i></button>
       </div>
     </div>
   </div>
 
-  <!-- EFFICIENCY, DECISION MAKING & PROFILING SECTION -->
-  <div class="container" id="efficiency">
-    <div class="section-title">
-      <h2>Efficiency, Intelligence & Profiling</h2>
-      <p>How data transforms reactive administration into proactive, high-precision decision-making.</p>
-    </div>
-
-    <div class="grid-2">
-      <!-- SYSTEM EFFICIENCY & EFFECTIVENESS -->
-      <div class="card">
-        <div class="card-icon"><i class="fa-solid fa-gauge-high"></i></div>
-        <h3>System Efficiency & Effectiveness</h3>
-        <p>By automating manual data entry, ticket sorting, and departmental hand-offs, MAULI eliminates bureaucratic friction entirely:</p>
-        <ul>
-          <li><i class="fa-solid fa-circle-check"></i> <strong>Zero Triage Delays:</strong> AI auto-categorizes incoming issues within seconds of submission.</li>
-          <li><i class="fa-solid fa-circle-check"></i> <strong>SLA & SLA Tracking:</strong> Automatic reminders keep departments accountable to strict resolution timelines.</li>
-          <li><i class="fa-solid fa-circle-check"></i> <strong>Resource Optimization:</strong> Prevents duplicate work by grouping similar complaints from the same locality into single actionable work-orders.</li>
-        </ul>
+  <!-- HEAVY DATA PROCESSING & ML CAMPAIGN STRATEGY ENGINE -->
+  <div class="container" id="ml-engine">
+    <div class="ml-engine-wrapper">
+      <div style="max-width: 780px;">
+        <span class="tagline-badge" style="background: rgba(255, 77, 121, 0.22); border-color: rgba(255, 77, 121, 0.5);">
+          <i class="fa-solid fa-network-wired"></i> Custom Compute & Predictive Modeling
+        </span>
+        <h2 style="font-size: 34px; font-weight: 800; margin-bottom: 14px; line-height: 1.2;">Constituency-Wise Heavy Data Processing & ML Campaign Strategy Engine</h2>
+        <p style="color: rgba(255, 255, 255, 0.85); font-size: 16px;">Every constituency possesses unique socio-economic, demographic, and infrastructural dynamics. Our proprietary compute pipeline ingests millions of multi-source data points to train bespoke machine learning models tailored to your exact geography.</p>
       </div>
 
-      <!-- DATA-DRIVEN DECISION MAKING -->
-      <div class="card">
-        <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
-        <h3>Data-Driven Decision Making</h3>
-        <p>Instead of guessing community needs, leaders access real-time statistical insight to allocate funds and manpower effectively:</p>
-        <ul>
-          <li><i class="fa-solid fa-circle-check"></i> <strong>Predictive Governance:</strong> Spot failure patterns in infrastructure (e.g., water/electricity) before widespread outages occur.</li>
-          <li><i class="fa-solid fa-circle-check"></i> <strong>Budget Allocation:</strong> Direct public funds precisely to wards displaying high issue density and systemic distress.</li>
-          <li><i class="fa-solid fa-circle-check"></i> <strong>Department Auditing:</strong> Evaluate department response rates objectively using real resolution metrics.</li>
+      <div class="pipeline-grid">
+        <div class="pipeline-step">
+          <span class="step-num mono">STAGE 01 // INGESTION</span>
+          <h4>Multi-Source Data Lake</h4>
+          <p>Fuses CAPI demographic surveys, historical booth voting patterns, civic grievance logs, public project records, and census variables into an encrypted relational graph.</p>
+        </div>
+
+        <div class="pipeline-step">
+          <span class="step-num mono">STAGE 02 // FEATURE ENG.</span>
+          <h4>Spatial & Cohort Clustering</h4>
+          <p>Applies unsupervised clustering and geospatial autocorrelation to segment wards by issue sensitivity, age-income distribution, and infrastructure deficit scores.</p>
+        </div>
+
+        <div class="pipeline-step">
+          <span class="step-num mono">STAGE 03 // ML MODELING</span>
+          <h4>Predictive Swing & Sentiment</h4>
+          <p>Runs gradient-boosted ensembles and multilingual NLP sentiment engines to forecast voter alignment shifts, turnout elasticity, and high-leverage intervention zones.</p>
+        </div>
+
+        <div class="pipeline-step">
+          <span class="step-num mono">STAGE 04 // EXECUTION</span>
+          <h4>Algorithmic Campaign Playbooks</h4>
+          <p>Outputs automated booth-level strategy matrices, field team deployment schedules, targeted communication scripts, and high-ROI development project recommendations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE SOLUTIONS EXPLORER (TABS + LIVE TELEMETRY PREVIEW) -->
+  <div class="container" id="efficiency">
+    <div class="section-title">
+      <span class="section-eyebrow">Interactive Architecture Explorer</span>
+      <h2>Deep-Dive Into Operational Capabilities</h2>
+      <p>Select a strategic layer below to inspect how our platform converts complex raw data into decisive administrative and campaign advantage.</p>
+    </div>
+
+    <div class="matrix-tabs">
+      <button class="matrix-tab-btn active" onclick="switchMatrix(0, this)"><i class="fa-solid fa-chess-knight"></i> ML Campaign Strategy</button>
+      <button class="matrix-tab-btn" onclick="switchMatrix(1, this)"><i class="fa-solid fa-square-poll-vertical"></i> Demographic Surveying</button>
+      <button class="matrix-tab-btn" onclick="switchMatrix(2, this)"><i class="fa-solid fa-diagram-project"></i> Project & Fund Analytics</button>
+      <button class="matrix-tab-btn" onclick="switchMatrix(3, this)"><i class="fa-solid fa-people-arrows"></i> Field Team Command</button>
+    </div>
+
+    <!-- PANEL 0: ML CAMPAIGN STRATEGY -->
+    <div class="matrix-panel active" id="matrix-0">
+      <div>
+        <span style="color: var(--pink-accent); font-weight: 800; font-size: 13px; text-transform: uppercase;">Predictive Political & Governance Intelligence</span>
+        <h3 style="font-size: 26px; font-weight: 800; margin: 8px 0 14px;">Constituency-Specific Campaign & Outreach Modeling</h3>
+        <p style="color: var(--text-muted); margin-bottom: 16px;">Stop relying on intuition or generic state-wide polls. Our ML models compute booth-by-booth win probability, issue salience, and resource allocation efficiency.</p>
+        <ul style="list-style: none; color: var(--text-muted); font-size: 14.5px;">
+          <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--pink-accent); margin-right: 8px;"></i> <strong>Swing Booth Identification:</strong> Pinpoints high-elasticity booths where targeted ground outreach yields maximum margin conversion.</li>
+          <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--pink-accent); margin-right: 8px;"></i> <strong>Issue-to-Demographic Correlation:</strong> Maps which civic grievances (water, roads, employment) drive sentiment within specific voter cohorts.</li>
+          <li><i class="fa-solid fa-circle-check" style="color: var(--pink-accent); margin-right: 8px;"></i> <strong>Dynamic Resource Optimizer:</strong> Allocates campaign rallies, volunteer hours, and development budgets based on real-time model weights.</li>
         </ul>
+      </div>
+      <div class="terminal-card mono">
+        <div class="terminal-header">
+          <span class="t-dot t-red"></span><span class="t-dot t-yellow"></span><span class="t-dot t-green"></span>
+          <span style="font-size: 11px; color: #aaa; margin-left: 6px;">mauli-ml-strategy // constituency_id: MH-214</span>
+        </div>
+        <div class="terminal-row"><span style="color:#ff85a2;">MODEL_STATUS:</span><span>CONVERGED (R² = 0.914)</span></div>
+        <div class="terminal-row"><span style="color:#ff85a2;">PROCESSED_RECORDS:</span><span>412,890 Voter & Survey Nodes</span></div>
+        <div class="terminal-row"><span style="color:#ff85a2;">PRIORITY_CLUSTER_A:</span><span>48 Swing Booths (High Water Stress)</span></div>
+        <div class="terminal-row"><span style="color:#ff85a2;">TOP_SENTIMENT_DRIVER:</span><span>Civic Infra + Youth Skilling (64.2%)</span></div>
+        <div class="terminal-row"><span style="color:#ff85a2;">RECOMMENDED_ACTION:</span><span>Deploy 14 Field Units -> Ward 07-12</span></div>
+      </div>
+    </div>
+
+    <!-- PANEL 1: DEMOGRAPHIC SURVEYING -->
+    <div class="matrix-panel" id="matrix-1">
+      <div>
+        <span style="color: var(--pink-accent); font-weight: 800; font-size: 13px; text-transform: uppercase;">Precision Field Intelligence</span>
+        <h3 style="font-size: 26px; font-weight: 800; margin: 8px 0 14px;">Multi-Layered Demographic & Sentiment Surveying</h3>
+        <p style="color: var(--text-muted); margin-bottom: 16px;">Built for massive field deployments with automated quality assurance, skip-logic questionnaires, and instant aggregation into constituency dashboards.</p>
+        <ul style="list-style: none; color: var(--text-muted); font-size: 14.5px;">
+          <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--pink-accent); margin-right: 8px;"></i> <strong>Anti-Fake Survey Engine:</strong> Flags rapid-tap entries, out-of-polygon GPS coordinates, and audio anomalies automatically.</li>
+          <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--pink-accent); margin-right: 8px;"></i> <strong>Cross-Tabulation Matrix:</strong> Slice live survey data by ward, age bracket, occupation, scheme beneficiary status, and sentiment score.</li>
+          <li><i class="fa-solid fa-circle-check" style="color: var(--pink-accent); margin-right: 8px;"></i> <strong>Longitudinal Tracking:</strong> Re-sample key cohorts quarterly to measure the exact sentiment impact of completed projects.</li>
+        </ul>
+      </div>
+      <div class="terminal-card mono">
+        <div class="terminal-header">
+          <span class="t-dot t-red"></span><span class="t-dot t-yellow"></span><span class="t-dot t-green"></span>
+          <span style="font-size: 11px; color: #aaa; margin-left: 6px;">capi-survey-telemetry // live_stream</span>
+        </div>
+        <div class="terminal-row"><span style="color:#ff85a2;">ACTIVE_ENUMERATORS:</span><span>186 Field Tablets Online</span></div>
+        <div class="terminal-row"><span style="color:#ff85a2;">SAMPLES_VALIDATED:</span><span>68,420 / 70,000 (97.7%)</span></div>
+        <div class="terminal-row"><span style="color:#ff85a2;">GEO_FENCE_INTEGRITY:</span><span>99.4% Inside Booth Polygons</span></div>
+        <div class="terminal-row"><span style="color:#ff85a2;">SCHEME_GAP_DETECTED:</span><span>18.3% Eligible Unenrolled (Ward 04)</span></div>
+        <div class="terminal-row"><span style="color:#ff85a2;">SYNC_LATENCY:</span><span>&lt; 420ms Incremental Delta</span></div>
+      </div>
+    </div>
+
+    <!-- PANEL 2: PROJECT & FUND ANALYTICS -->
+    <div class="matrix-panel" id="matrix-2">
+      <div>
+        <span style="color: var(--pink-accent); font-weight: 800; font-size: 13px; text-transform: uppercase;">Infrastructure & Capital Telemetry</span>
+        <h3 style="font-size: 26px; font-weight: 800; margin: 8px 0 14px;">Project Analytics, Milestone & Budget Tracking</h3>
+        <p style="color: var(--text-muted); margin-bottom: 16px;">Complete visibility over constituency development works—from tender sanctioning and fund disbursement to contractor SLA compliance and public impact scoring.</p>
+        <ul style="list-style: none; color: var(--text-muted); font-size: 14.5px;">
+          <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--pink-accent); margin-right: 8px;"></i> <strong>Delay Risk Prediction:</strong> Highlights stalled civic projects early using contractor velocity and stage-gate analytics.</li>
+          <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--pink-accent); margin-right: 8px;"></i> <strong>Equity & Coverage Index:</strong> Compares per-capita infrastructure spend against local grievance density across every ward.</li>
+          <li><i class="fa-solid fa-circle-check" style="color: var(--pink-accent); margin-right: 8px;"></i> <strong>Geo-Tagged Proof Logs:</strong> Timestamped site inspection photos linked directly to each project's financial ledger.</li>
+        </ul>
+      </div>
+      <div class="terminal-card mono">
+        <div class="terminal-header">
+          <span class="t-dot t-red"></span><span class="t-dot t-yellow"></span><span class="t-dot t-green"></span>
+          <span style="font-size: 11px; color: #aaa; margin-left: 6px;">project-analytics-core // fy_2026_q4</span>
+        </div>
+        <div class="terminal-row"><span style="color:#ff85a2;">TRACKED_WORKS:</span><span>342 Active Civic & Infra Projects</span></div>
+        <div class="terminal-row"><span style="color:#ff85a2;">FUND_UTILIZATION:</span><span>84.6% Disbursed Across 28 Wards</span></div>
+        <div class="terminal-row"><span style="color:#ff85a2;">ON_SCHEDULE_RATE:</span><span>89.2% (+19% vs Manual Audit)</span></div>
+        <div class="terminal-row"><span style="color:#ff85a2;">BOTTLENECK_ALERT:</span><span>3 Drainage Tenders > 14d Delay</span></div>
+        <div class="terminal-row"><span style="color:#ff85a2;">IMPACT_SCORE:</span><span>High Correlation w/ Grievance Drop</span></div>
+      </div>
+    </div>
+
+    <!-- PANEL 3: TEAM & CADRE MANAGEMENT -->
+    <div class="matrix-panel" id="matrix-3">
+      <div>
+        <span style="color: var(--pink-accent); font-weight: 800; font-size: 13px; text-transform: uppercase;">Hierarchical Workforce Execution</span>
+        <h3 style="font-size: 26px; font-weight: 800; margin: 8px 0 14px;">Field Team, Cadre & Back-Office Command</h3>
+        <p style="color: var(--text-muted); margin-bottom: 16px;">Turn sprawling volunteer networks, booth committees, and administrative staff into a disciplined, data-tracked execution machine.</p>
+        <ul style="list-style: none; color: var(--text-muted); font-size: 14.5px;">
+          <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--pink-accent); margin-right: 8px;"></i> <strong>Multi-Tier Org Hierarchy:</strong> Role-based dashboards for Constituency Heads, Zone Coordinators, Booth Leaders, and Field Agents.</li>
+          <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--pink-accent); margin-right: 8px;"></i> <strong>Automated Daily Beat Plans:</strong> Assigns household visits, grievance follow-ups, and survey targets dynamically via mobile app.</li>
+          <li><i class="fa-solid fa-circle-check" style="color: var(--pink-accent); margin-right: 8px;"></i> <strong>Objective Performance Scoring:</strong> Evaluates team members on verified field closures, turnaround speed, and data accuracy.</li>
+        </ul>
+      </div>
+      <div class="terminal-card mono">
+        <div class="terminal-header">
+          <span class="t-dot t-red"></span><span class="t-dot t-yellow"></span><span class="t-dot t-green"></span>
+          <span style="font-size: 11px; color: #aaa; margin-left: 6px;">workforce-command // hierarchy_sync</span>
+        </div>
+        <div class="terminal-row"><span style="color:#ff85a2;">MANAGED_PERSONNEL:</span><span>1,240 Field & Office Operators</span></div>
+        <div class="terminal-row"><span style="color:#ff85a2;">DAILY_TASK_COMPLETION:</span><span>93.8% Verified Geo-Checkins</span></div>
+        <div class="terminal-row"><span style="color:#ff85a2;">AVG_GRIEVANCE_TURNAROUND:</span><span>36 Hours (Down from 14 Days)</span></div>
+        <div class="terminal-row"><span style="color:#ff85a2;">BOOTH_COVERAGE:</span><span>100% Active Node Assignment</span></div>
+        <div class="terminal-row"><span style="color:#ff85a2;">ESCALATION_PROTOCOL:</span><span>Auto-Reassign on 24h Inactivity</span></div>
       </div>
     </div>
 
     <!-- CONSTITUENCY PROFILING FULL-WIDTH CARD -->
     <div class="impact-box">
       <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
-        <div style="background: var(--pink-gradient); color: white; width: 48px; height: 48px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
-          <i class="fa-solid fa-id-card"></i>
+        <div style="background: var(--pink-gradient); color: white; width: 52px; height: 52px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 22px;">
+          <i class="fa-solid fa-layer-group"></i>
         </div>
         <div>
-          <h3 style="font-size: 24px; font-weight: 800;">Constituency & Locality Profiling</h3>
-          <p style="color: var(--text-muted); font-size: 15px;">Building a complete digital intelligence map of citizen demographics, needs, and systemic vulnerabilities.</p>
+          <h3 style="font-size: 24px; font-weight: 800;">360° Constituency Digital Twin & Compounding Intelligence</h3>
+          <p style="color: var(--text-muted); font-size: 15px;">Why unified SaaS architecture outperforms fragmented tools: every module feeds a single living constituency intelligence graph.</p>
         </div>
       </div>
 
       <div class="impact-metric">
         <div class="metric-icon"><i class="fa-solid fa-map-pin"></i></div>
         <div>
-          <h4 style="font-size: 17px; font-weight: 700;">Geo-Spatial Problem Mapping</h4>
-          <p style="color: var(--text-muted); font-size: 14px;">Every issue generates a geographic footprint. MAULI aggregates this data to create live heatmaps of water, road, electricity, or sanitation vulnerabilities across wards.</p>
+          <h4 style="font-size: 17px; font-weight: 700;">Multi-Layer Geo-Spatial Synthesis</h4>
+          <p style="color: var(--text-muted); font-size: 14.5px;">Overlays demographic survey results, active public works, field worker coverage, and grievance hotspots onto a single interactive GIS map—exposing blind spots immediately.</p>
         </div>
       </div>
 
       <div class="impact-metric">
-        <div class="metric-icon"><i class="fa-solid fa-users"></i></div>
+        <div class="metric-icon"><i class="fa-solid fa-microchip"></i></div>
         <div>
-          <h4 style="font-size: 17px; font-weight: 700;">Citizen Need Profiling</h4>
-          <p style="color: var(--text-muted); font-size: 14px;">Understand what specific demographics care about most. Tracks recurring requests, sentiment trends, and community satisfaction to tailor policy effectively.</p>
+          <h4 style="font-size: 17px; font-weight: 700;">Self-Learning Constituency Models</h4>
+          <p style="color: var(--text-muted); font-size: 14.5px;">As your teams resolve grievances and log field surveys, our custom ML pipelines continuously recalibrate booth priority scores and campaign messaging strategies.</p>
         </div>
       </div>
 
       <div class="impact-metric">
         <div class="metric-icon"><i class="fa-solid fa-shield-halved"></i></div>
         <div>
-          <h4 style="font-size: 17px; font-weight: 700;">Historical Trend Analysis</h4>
-          <p style="color: var(--text-muted); font-size: 14px;">Store full administrative history across months and years to track long-term ward developments and measure the real-world impact of public policy investments.</p>
+          <h4 style="font-size: 17px; font-weight: 700;">Enterprise Security & Institutional Memory</h4>
+          <p style="color: var(--text-muted); font-size: 14.5px;">Role-encrypted data silos preserve multi-year electoral, developmental, and demographic records—ensuring seamless continuity across administrative cycles and campaigns.</p>
         </div>
       </div>
     </div>
@@ -839,36 +1325,39 @@
 
   <!-- ABOUT SECTION -->
   <div class="container" id="about">
-    <div class="card" style="max-width: 900px; margin: 0 auto;">
-      <div class="card-icon"><i class="fa-solid fa-building-user"></i></div>
-      <h3 style="font-size: 26px;">About Western Estate</h3>
-      <p style="margin-bottom: 16px; font-size: 16px;">Western Estate is a modern technology organization operating at the intersection of public systems, automation, real estate, and data intelligence.</p>
-      <p style="font-size: 16px;">Our mission is to help public institutions and administrative bodies operate with enterprise-grade speed, structure, transparency, and data insight.</p>
+    <div class="card" style="max-width: 940px; margin: 0 auto;">
+      <div class="card-header-row">
+        <div class="card-icon"><i class="fa-solid fa-building-user"></i></div>
+        <span class="module-tag mono">ENTERPRISE SAAS // GOVERNANCE TECH</span>
+      </div>
+      <h3 style="font-size: 28px;">About Western Estate</h3>
+      <p style="margin-bottom: 16px; font-size: 16px;">Western Estate is a deep-tech SaaS organization engineering full-stack operating systems, heavy data processing pipelines, and machine learning intelligence for public administration, constituency management, and large-scale field operations.</p>
+      <p style="font-size: 16px;">By combining demographic surveying, project telemetry, workforce command, automated grievance redressal, and predictive campaign analytics into one cohesive platform, we equip leaders and institutions to govern and strategize with scientific precision.</p>
     </div>
   </div>
 
   <!-- CONTACT SECTION -->
   <div class="container" id="contact">
-    <div class="card" style="max-width: 650px; margin: 0 auto; text-align: center;">
+    <div class="card" style="max-width: 680px; margin: 0 auto; text-align: center;">
       <div class="card-icon" style="margin: 0 auto 20px;"><i class="fa-solid fa-paper-plane"></i></div>
-      <h3 style="font-size: 26px;">Get In Touch</h3>
-      <p style="margin-bottom: 30px;">Contact us to deploy MAULI AI for your constituency or governance needs.</p>
+      <h3 style="font-size: 28px;">Deploy the MAULI Constituency OS</h3>
+      <p style="margin-bottom: 30px;">Schedule a live architecture walkthrough and custom ML data assessment for your constituency, public office, or campaign organization.</p>
       
       <div style="display: flex; flex-direction: column; gap: 16px; align-items: center;">
-        <a href="tel:+917774049999" class="btn btn-secondary" style="width: 100%; color: var(--text-dark); border-color: var(--pink-light);"><i class="fa-solid fa-phone" style="color: var(--pink-accent);"></i> +91 7774049999</a>
-        <a href="mailto:westernestateanalytica@gmail.com" class="btn btn-secondary" style="width: 100%; color: var(--text-dark); border-color: var(--pink-light);"><i class="fa-solid fa-envelope" style="color: var(--pink-accent);"></i> westernestateanalytica@gmail.com</a>
+        <a href="tel:+917774049999" class="btn btn-secondary" style="width: 100%; justify-content: center; color: var(--text-dark); border-color: var(--pink-light);"><i class="fa-solid fa-phone" style="color: var(--pink-accent);"></i> +91 7774049999</a>
+        <a href="mailto:westernestateanalytica@gmail.com" class="btn btn-secondary" style="width: 100%; justify-content: center; color: var(--text-dark); border-color: var(--pink-light);"><i class="fa-solid fa-envelope" style="color: var(--pink-accent);"></i> westernestateanalytica@gmail.com</a>
       </div>
     </div>
   </div>
 
   <!-- FLOATING WHATSAPP -->
   <a href="https://wa.me/917774049999" class="whatsapp-float" target="_blank">
-    <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> Chat on WhatsApp
+    <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> Request Live Demo
   </a>
 
   <!-- FOOTER -->
   <footer>
-    © 2026 Western Estate — Governance Intelligence Platform
+    © 2026 Western Estate — MAULI Constituency Operating System & Enterprise Governance AI
   </footer>
 
   <script>
@@ -889,6 +1378,15 @@
     function nextSlide() { showSlide(currentSlide + 1); }
     function prevSlide() { showSlide(currentSlide - 1); }
     function setSlide(index) { showSlide(index); }
+
+    // INTERACTIVE MATRIX TABS LOGIC
+    function switchMatrix(index, btn) {
+      document.querySelectorAll('.matrix-panel').forEach(panel => panel.classList.remove('active'));
+      document.querySelectorAll('.matrix-tab-btn').forEach(b => b.classList.remove('active'));
+      
+      document.getElementById('matrix-' + index).classList.add('active');
+      btn.classList.add('active');
+    }
   </script>
 </body>
 </html>
