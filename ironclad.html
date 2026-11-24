@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Western Estate — Heavy Earthmoving & Civil Infrastructure | East Pune</title>
+
+<!-- Google Fonts & Font Awesome Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+  :root {
+    --bg-dark: #0f1115;
+    --bg-surface: #171a21;
+    --bg-card: #1d212a;
+    --bg-card-hover: #232833;
+    --amber: #f59e0b;
+    --amber-bright: #fbbf24;
+    --amber-dark: #b45309;
+    --amber-glow: rgba(245, 158, 11, 0.14);
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-amber: rgba(245, 158, 11, 0.35);
+    --shadow-heavy: 0 24px 48px rgba(0, 0, 0, 0.45);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* --- INDUSTRIAL HAZARD STRIPE ACCENT --- */
+  .hazard-bar {
+    height: 4px;
+    width: 100%;
+    background: repeating-linear-gradient(
+      -45deg,
+      #f59e0b,
+      #f59e0b 12px,
+      #171a21 12px,
+      #171a21 24px
+    );
+  }
+
+  /* --- NAVBAR --- */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 6%;
+    background: rgba(15, 17, 21, 0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .brand-container {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .brand {
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+  }
+
+  .brand i {
+    color: var(--amber);
+    font-size: 22px;
+  }
+
+  .brand-divider {
+    height: 24px;
+    width: 1px;
+    background: var(--border-subtle);
+  }
+
+  .division-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--amber);
+    background: var(--amber-glow);
+    border: 1px solid var(--border-amber);
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--amber);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .nav-cta {
+    background: var(--amber);
+    color: #0f1115;
+    font-weight: 800;
+    padding: 9px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+  }
+
+  .nav-cta:hover {
+    background: var(--amber-bright);
+    transform: translateY(-1px);
+  }
+
+  /* --- HERO SECTION --- */
+  .hero-wrapper {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 32px 20px;
+  }
+
+  .hero {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 90px 48px 75px;
+    background: linear-gradient(135deg, #1b1f27 0%, #111318 100%), url('ironclad-hero.jpg') center/cover no-repeat;
+    background-blend-mode: overlay;
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-heavy);
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(15, 17, 21, 0.94) 0%, rgba(15, 17, 21, 0.78) 60%, rgba(15, 17, 21, 0.55) 100%);
+    z-index: 1;
+  }
+
+  .hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid var(--border-amber);
+    color: var(--amber-bright);
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .live-dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #10b981;
+  }
+
+  .hero h1 {
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.14;
+    letter-spacing: -0.6px;
+    margin-bottom: 18px;
+    color: #ffffff;
+  }
+
+  .hero h1 span {
+    color: var(--amber);
+  }
+
+  .hero p {
+    font-size: 17px;
+    color: var(--text-secondary);
+    max-width: 640px;
+    margin-bottom: 32px;
+    line-height: 1.65;
+  }
+
+  .cta-group {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 14px 26px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--amber);
+    color: #0f1115;
+  }
+
+  .btn-primary:hover {
+    background: var(--amber-bright);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-primary);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--amber);
+  }
+
+  /* DISPATCH SPEC CARD IN HERO */
+  .dispatch-card {
+    background: rgba(23, 26, 33, 0.9);
+    border: 1px solid var(--border-amber);
+    border-radius: 14px;
+    padding: 26px;
+    backdrop-filter: blur(12px);
+  }
+
+  .dispatch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 14px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 12px;
+    color: var(--amber);
+    font-weight: 700;
+  }
+
+  .dispatch-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+    font-size: 13px;
+  }
+
+  .dispatch-row:last-child {
+    border-bottom: none;
+  }
+
+  .dispatch-row span:first-child {
+    color: var(--text-secondary);
+  }
+
+  .dispatch-row span:last-child {
+    color: #fff;
+    font-weight: 700;
+    text-align: right;
+  }
+
+  /* --- CONTAINERS & HEADERS --- */
+  .container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 70px 20px;
+  }
+
+  .section-header {
+    margin-bottom: 44px;
+    border-left: 4px solid var(--amber);
+    padding-left: 20px;
+  }
+
+  .section-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--amber);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .section-header h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.4px;
+  }
+
+  .section-header p {
+    color: var(--text-secondary);
+    font-size: 15.5px;
+    max-width: 680px;
+    margin-top: 6px;
+  }
+
+  /* --- FLEET INVENTORY GRID --- */
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .fleet-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fleet-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-amber);
+    background: var(--bg-card-hover);
+  }
+
+  .fleet-img-box {
+    height: 210px;
+    background: #13161c;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fleet-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .fleet-placeholder {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    color: var(--text-muted);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #1e222b 0%, #13161c 100%);
+  }
+
+  .fleet-placeholder i {
+    font-size: 42px;
+    color: var(--amber);
+    margin-bottom: 10px;
+    opacity: 0.85;
+  }
+
+  .class-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(15, 17, 21, 0.88);
+    border: 1px solid var(--border-amber);
+    color: var(--amber);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  .fleet-body {
+    padding: 26px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fleet-body h3 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .fleet-body p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 18px;
+  }
+
+  .spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: auto;
+    font-size: 12.5px;
+  }
+
+  .spec-table td {
+    padding: 8px 0;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .spec-table td:first-child {
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .spec-table td:last-child {
+    color: var(--text-primary);
+    font-weight: 700;
+    text-align: right;
+  }
+
+  /* --- ENGAGEMENT MODELS (WET LEASE VS TURNKEY) --- */
+  .model-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    padding: 36px;
+    position: relative;
+  }
+
+  .model-card.featured {
+    border-color: var(--border-amber);
+    background: linear-gradient(180deg, rgba(245, 158, 11, 0.06) 0%, var(--bg-card) 100%);
+  }
+
+  .model-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+
+  .model-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: var(--amber-glow);
+    border: 1px solid var(--border-amber);
+    color: var(--amber);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  .model-card h3 {
+    font-size: 23px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  .model-card p {
+    color: var(--text-secondary);
+    font-size: 14.5px;
+    margin-bottom: 20px;
+  }
+
+  .check-list {
+    list-style: none;
+  }
+
+  .check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-primary);
+    margin-bottom: 11px;
+  }
+
+  .check-list li i {
+    color: var(--amber);
+    margin-top: 4px;
+    font-size: 13px;
+  }
+
+  /* --- SCOPE OF CIVIL EARTHWORKS --- */
+  .scope-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .scope-item {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.25s ease;
+  }
+
+  .scope-item:hover {
+    border-color: var(--border-amber);
+    background: var(--bg-card);
+  }
+
+  .scope-num {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--amber);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .scope-item h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .scope-item p {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+  }
+
+  /* --- EAST PUNE DEPLOYMENT ZONE --- */
+  .corridor-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 18px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 36px;
+    align-items: center;
+  }
+
+  .zone-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .zone-tag {
+    background: var(--bg-dark);
+    border: 1px solid var(--border-amber);
+    color: var(--text-primary);
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .zone-tag i {
+    color: var(--amber);
+    font-size: 12px;
+  }
+
+  .sla-panel {
+    background: var(--bg-dark);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .sla-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .sla-row:last-child {
+    border-bottom: none;
+  }
+
+  .sla-label {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+  }
+
+  .sla-val {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--amber);
+  }
+
+  /* --- DIRECT QUOTE / DISPATCH INQUIRY --- */
+  .dispatch-box {
+    background: linear-gradient(135deg, #1d212a 0%, #14171d 100%);
+    border: 1px solid var(--border-amber);
+    border-radius: 18px;
+    padding: 44px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .form-group {
+    margin-bottom: 14px;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 13px 16px;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .form-control:focus {
+    border-color: var(--amber);
+  }
+
+  .contact-direct-card {
+    background: var(--bg-dark);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  /* --- FLOATING WHATSAPP --- */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #16a34a;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13.5px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 100;
+    transition: transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+
+  .whatsapp-float:hover {
+    transform: translateY(-3px);
+    background: #15803d;
+  }
+
+  footer {
+    text-align: center;
+    padding: 36px 20px;
+    color: var(--text-muted);
+    font-size: 13.5px;
+    border-top: 1px solid var(--border-subtle);
+    background: #0b0d10;
+  }
+
+  @media (max-width: 960px) {
+    .hero-grid, .grid-3, .grid-2, .scope-grid, .corridor-box, .dispatch-box {
+      grid-template-columns: 1fr;
+    }
+    .hero {
+      padding: 60px 26px;
+    }
+    .hero h1 {
+      font-size: 34px;
+    }
+    .nav-links {
+      display: none;
+    }
+  }
+</style>
+</head>
+
+<body>
+  <div class="hazard-bar"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="brand-container">
+      <div class="brand"><i class="fa-solid fa-helmet-safety"></i> WESTERN ESTATE</div>
+      <div class="brand-divider"></div>
+      <span class="division-tag mono">IRONCLAD // CIVIL &amp; FLEET</span>
+    </div>
+    <div class="nav-links">
+      <a href="#fleet" class="nav-link">Machinery Fleet</a>
+      <a href="#contracts" class="nav-link">Wet-Lease &amp; Turnkey</a>
+      <a href="#earthworks" class="nav-link">Scope of Work</a>
+      <a href="#coverage" class="nav-link">East Pune Zone</a>
+      <a href="#dispatch" class="nav-cta">Request Machine</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <div class="hero-wrapper">
+    <div class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="status-pill mono">
+            <span class="live-dot"></span> East Pune Fleet Mobilization Active
+          </div>
+          <h1>Heavy Earthmoving Fleet &amp; <span>Turnkey Civil Excavation</span></h1>
+          <p>Direct deployment of 20-ton class Volvo EC210 &amp; Tata Hitachi EX210 excavators and JCB backhoe loaders for real estate developments, road infrastructure, and government civil contracts across East Pune.</p>
+          <div class="cta-group">
+            <a href="#dispatch" class="btn btn-primary"><i class="fa-solid fa-truck-monster"></i> Book Machinery / Quote</a>
+            <a href="#fleet" class="btn btn-secondary"><i class="fa-solid fa-clipboard-list"></i> Inspect Fleet Specs</a>
+          </div>
+        </div>
+
+        <div class="dispatch-card mono">
+          <div class="dispatch-header">
+            <span>// OPERATIONS BRIEF</span>
+            <span>PUNE-EAST</span>
+          </div>
+          <div class="dispatch-row">
+            <span>HEAVY EXCAVATORS</span>
+            <span>Volvo 210 / Hitachi 210</span>
+          </div>
+          <div class="dispatch-row">
+            <span>UTILITY LOADERS</span>
+            <span>JCB Backhoe Fleet</span>
+          </div>
+          <div class="dispatch-row">
+            <span>CONTRACT MODELS</span>
+            <span>Wet-Lease &amp; Turnkey</span>
+          </div>
+          <div class="dispatch-row">
+            <span>PRIMARY CORRIDOR</span>
+            <span>Kharadi – Loni Kalbhor</span>
+          </div>
+          <div class="dispatch-row">
+            <span>DISPATCH LINE</span>
+            <span style="color: var(--amber);">+91 77740 49999</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLEET INVENTORY SECTION -->
+  <div class="container" id="fleet">
+    <div class="section-header">
+      <span class="section-eyebrow mono">01 // OWNED &amp; OPERATED MACHINERY</span>
+      <h2>Heavy-Duty Equipment Fleet</h2>
+      <p>Maintained on strict preventive service schedules to prevent costly site downtime during critical foundation and road-cutting timelines.</p>
+    </div>
+
+    <div class="grid-3">
+      <!-- MACHINE 1: VOLVO 210 -->
+      <div class="fleet-card">
+        <div class="fleet-img-box">
+          <span class="class-badge mono">20-TON CLASS // TRACK</span>
+          <img src="volvo-210.jpg" alt="Volvo EC210 Excavator" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="fleet-placeholder">
+            <i class="fa-solid fa-snowplow"></i>
+            <span class="mono" style="font-size:12px;">volvo-210.jpg</span>
+          </div>
+        </div>
+        <div class="fleet-body">
+          <h3>Volvo EC210 Excavator</h3>
+          <p>High-torque hydraulic crawler excavator built for deep basement excavation, hard murum/rock breaking, and continuous high-cycle loading.</p>
+          <table class="spec-table mono">
+            <tr>
+              <td>Operating Weight</td>
+              <td>~20,500 – 21,500 kg</td>
+            </tr>
+            <tr>
+              <td>Attachments</td>
+              <td>Heavy Bucket / Rock Breaker</td>
+            </tr>
+            <tr>
+              <td>Primary Duty</td>
+              <td>Bulk Cut, Basements, Quarry</td>
+            </tr>
+            <tr>
+              <td>Deployment Mode</td>
+              <td>Hourly / Monthly Wet-Lease</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- MACHINE 2: HITACHI 210 -->
+      <div class="fleet-card">
+        <div class="fleet-img-box">
+          <span class="class-badge mono">20-TON CLASS // TRACK</span>
+          <img src="hitachi-210.jpg" alt="Hitachi 210 Excavator" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="fleet-placeholder">
+            <i class="fa-solid fa-gear"></i>
+            <span class="mono" style="font-size:12px;">hitachi-210.jpg</span>
+          </div>
+        </div>
+        <div class="fleet-body">
+          <h3>Hitachi 210 Excavator</h3>
+          <p>Proven hydraulic speed and fuel-efficient swing cycle performance for mass earth shifting, canal/drainage widening, and highway embankment work.</p>
+          <table class="spec-table mono">
+            <tr>
+              <td>Operating Weight</td>
+              <td>~20,300 – 21,200 kg</td>
+            </tr>
+            <tr>
+              <td>Attachments</td>
+              <td>GP/Rock Bucket / Breaker</td>
+            </tr>
+            <tr>
+              <td>Primary Duty</td>
+              <td>Infra Earthwork &amp; Trenching</td>
+            </tr>
+            <tr>
+              <td>Deployment Mode</td>
+              <td>Hourly / Monthly Wet-Lease</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- MACHINE 3: JCB BACKHOE LOADER -->
+      <div class="fleet-card">
+        <div class="fleet-img-box">
+          <span class="class-badge mono">UTILITY // 2WD &amp; 4WD</span>
+          <img src="jcb-backhoe.jpg" alt="JCB Backhoe Loader" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="fleet-placeholder">
+            <i class="fa-solid fa-truck-pickup"></i>
+            <span class="mono" style="font-size:12px;">jcb-backhoe.jpg</span>
+          </div>
+        </div>
+        <div class="fleet-body">
+          <h3>JCB Backhoe Loaders</h3>
+          <p>Versatile dual-end loader and excavator units for rapid site clearing, utility pipeline trenching, plot grading, and aggregate backfilling.</p>
+          <table class="spec-table mono">
+            <tr>
+              <td>Configuration</td>
+              <td>Front Loader + Rear Hoe</td>
+            </tr>
+            <tr>
+              <td>Mobility</td>
+              <td>Fast Inter-Site Road Travel</td>
+            </tr>
+            <tr>
+              <td>Primary Duty</td>
+              <td>Leveling, Trenches, Footings</td>
+            </tr>
+            <tr>
+              <td>Deployment Mode</td>
+              <td>Shift / Daily / Monthly</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENGAGEMENT MODELS: WET LEASE VS TURNKEY CONTRACTS -->
+  <div class="container" id="contracts">
+    <div class="section-header">
+      <span class="section-eyebrow mono">02 // FLEXIBLE COMMERCIAL EXECUTION</span>
+      <h2>Wet-Lease Rentals &amp; Turnkey Earthwork Contracts</h2>
+      <p>Engage our fleet either on a dedicated rental basis or hand over complete earthmoving execution on fixed cubic-meter / project milestones.</p>
+    </div>
+
+    <div class="grid-2">
+      <!-- WET LEASE -->
+      <div class="model-card">
+        <div class="model-header">
+          <div class="model-icon"><i class="fa-solid fa-key"></i></div>
+          <span class="division-tag mono">HOURLY / SHIFT / MONTHLY</span>
+        </div>
+        <h3>Wet-Lease Machinery Rentals</h3>
+        <p>Zero operational headache for site engineers and PMC teams. You get ready-to-work machinery backed by our operators and technical crew.</p>
+        <ul class="check-list">
+          <li><i class="fa-solid fa-check"></i> <strong>Certified Heavy Operators:</strong> Experienced operators skilled in precision footing cuts, slope grading, and rock breaking.</li>
+          <li><i class="fa-solid fa-check"></i> <strong>Fuel &amp; Preventive Maintenance:</strong> Flexible wet-lease (with fuel) or dry-fuel options with on-site hydraulic &amp; mechanical support.</li>
+          <li><i class="fa-solid fa-check"></i> <strong>Transparent Logbooks:</strong> Daily engine-hour meter logs signed off with your site engineer for clean billing.</li>
+          <li><i class="fa-solid fa-check"></i> <strong>Rapid Breakdown Backup:</strong> Immediate mechanic dispatch across East Pune to keep your critical path moving.</li>
+        </ul>
+      </div>
+
+      <!-- TURNKEY EARTHWORK -->
+      <div class="model-card featured">
+        <div class="model-header">
+          <div class="model-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+          <span class="division-tag mono">PER CUM / LUMP-SUM</span>
+        </div>
+        <h3>Turnkey Earthwork Contracts</h3>
+        <p>End-to-end site preparation and bulk earthmoving executed against engineering drawings, RL levels, and strict handover schedules.</p>
+        <ul class="check-list">
+          <li><i class="fa-solid fa-check"></i> <strong>Bulk Excavation &amp; Disposal:</strong> High-volume soil and hard murum excavation with coordinated tipper haulage and dumping.</li>
+          <li><i class="fa-solid fa-check"></i> <strong>Hard Rock Breaking &amp; Blasting:</strong> Hydraulic rock-breaker deployment and controlled rock removal for deep basements.</li>
+          <li><i class="fa-solid fa-check"></i> <strong>Precision Land Leveling &amp; Grading:</strong> Plot development, industrial shed pad preparation, and contour leveling.</li>
+          <li><i class="fa-solid fa-check"></i> <strong>Road Sub-Base &amp; Trenching:</strong> GSB/WMM sub-base preparation, storm-water drains, and utility corridor trenching.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCOPE OF CIVIL & INFRASTRUCTURE WORKS -->
+  <div class="container" id="earthworks">
+    <div class="section-header">
+      <span class="section-eyebrow mono">03 // TECHNICAL CAPABILITIES</span>
+      <h2>Core Earthmoving &amp; Site Development Scope</h2>
+      <p>Built to serve Tier-1 real estate developers, industrial park builders, and government civil contractors.</p>
+    </div>
+
+    <div class="scope-grid">
+      <div class="scope-item">
+        <span class="scope-num mono">SCOPE // 01</span>
+        <h4>Deep Basement &amp; Foundation Excavation</h4>
+        <p>Multi-level commercial and residential basement excavation with accurate vertical edge cutting, ramp management, and column pit trenching.</p>
+      </div>
+
+      <div class="scope-item">
+        <span class="scope-num mono">SCOPE // 02</span>
+        <h4>Hard Rock Breaking &amp; Controlled Blasting</h4>
+        <p>Heavy hydraulic breaker attachments on Volvo/Hitachi 210 excavators for basalt strata removal in urban East Pune sites.</p>
+      </div>
+
+      <div class="scope-item">
+        <span class="scope-num mono">SCOPE // 03</span>
+        <h4>Layout &amp; Industrial Land Leveling</h4>
+        <p>Cut-and-fill earth balancing, clearing, murum filling, and compaction readiness for plotted layouts, warehouses, and IT parks.</p>
+      </div>
+
+      <div class="scope-item">
+        <span class="scope-num mono">SCOPE // 04</span>
+        <h4>Road Sub-Base &amp; Highway Earthwork</h4>
+        <p>Embankment formation, box cutting, shoulder dressing, and sub-base preparation for municipal roads and highway sub-contracts.</p>
+      </div>
+
+      <div class="scope-item">
+        <span class="scope-num mono">SCOPE // 05</span>
+        <h4>Utility, Drainage &amp; Pipeline Trenching</h4>
+        <p>Long-stretch trench excavation and backfilling for water supply mains, sewage lines, stormwater culverts, and underground cabling.</p>
+      </div>
+
+      <div class="scope-item">
+        <span class="scope-num mono">SCOPE // 06</span>
+        <h4>Government &amp; Public Infra Sub-Contracts</h4>
+        <p>Reliable fleet augmentation and package execution for PMRDA, PWD, municipal civic works, and irrigation/canal desilting projects.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EAST PUNE OPERATIONAL CORRIDOR -->
+  <div class="container" id="coverage">
+    <div class="corridor-box">
+      <div>
+        <span class="section-eyebrow mono">04 // STRATEGIC GEOGRAPHY</span>
+        <h2 style="font-size: 30px; font-weight: 800; color: #fff; margin-bottom: 12px;">Focused East Pune Deployment</h2>
+        <p style="color: var(--text-secondary); font-size: 15px;">Keeping our fleet concentrated across East Pune’s fastest-growing infrastructure belt ensures rapid low-bed trailer mobilization, lower transport overheads, and immediate on-site mechanical support.</p>
+        
+        <div class="zone-tags mono">
+          <span class="zone-tag"><i class="fa-solid fa-location-dot"></i> Kharadi</span>
+          <span class="zone-tag"><i class="fa-solid fa-location-dot"></i> Wagholi</span>
+          <span class="zone-tag"><i class="fa-solid fa-location-dot"></i> Manjari</span>
+          <span class="zone-tag"><i class="fa-solid fa-location-dot"></i> Loni Kalbhor</span>
+          <span class="zone-tag"><i class="fa-solid fa-location-dot"></i> Hadapsar / Mundhwa</span>
+          <span class="zone-tag"><i class="fa-solid fa-location-dot"></i> Kesnand / Lohegaon</span>
+          <span class="zone-tag"><i class="fa-solid fa-location-dot"></i> Solapur Highway Belt</span>
+        </div>
+      </div>
+
+      <div class="sla-panel mono">
+        <div style="font-size: 12px; color: var(--amber); font-weight: 700; margin-bottom: 12px;">// SITE RELIABILITY STANDARDS</div>
+        <div class="sla-row">
+          <span class="sla-label">Fleet Mobilization</span>
+          <span class="sla-val">24 – 48 Hours</span>
+        </div>
+        <div class="sla-row">
+          <span class="sla-label">Operator Coverage</span>
+          <span class="sla-val">Single / Double Shift</span>
+        </div>
+        <div class="sla-row">
+          <span class="sla-label">Billing &amp; Compliance</span>
+          <span class="sla-val">GST Invoicing + Logbooks</span>
+        </div>
+        <div class="sla-row">
+          <span class="sla-label">Site Inspection</span>
+          <span class="sla-val">Same-Day East Pune Visit</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DISPATCH & QUOTE REQUEST SECTION -->
+  <div class="container" id="dispatch">
+    <div class="dispatch-box">
+      <div>
+        <span class="section-eyebrow mono">05 // DIRECT FLEET DESK</span>
+        <h2 style="font-size: 32px; font-weight: 800; color: #fff; margin-bottom: 12px;">Request Machinery or Site Estimate</h2>
+        <p style="color: var(--text-secondary); font-size: 15px;">Share your site location, machine requirement, or approximate excavation volume (CUM). Our operations desk responds directly with machine availability and rate cards.</p>
+
+        <div class="contact-direct-card">
+          <div style="font-size: 12px; color: var(--amber); font-weight: 700; margin-bottom: 10px;" class="mono">DIRECT DISPATCH &amp; CONTRACTS</div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="tel:+917774049999" style="color: #fff; text-decoration: none; font-weight: 700; font-size: 18px; display: flex; align-items: center; gap: 10px;">
+              <i class="fa-solid fa-phone" style="color: var(--amber);"></i> +91 77740 49999
+            </a>
+            <span style="color: var(--text-secondary); font-size: 13.5px;">
+              <i class="fa-solid fa-map-pin" style="color: var(--amber); margin-right: 8px;"></i> Operating Across East Pune (Kharadi, Wagholi, Manjari, Loni Kalbhor)
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- INSTANT WHATSAPP QUOTE BUILDER -->
+      <form onsubmit="sendWhatsAppQuote(event)" style="background: var(--bg-dark); padding: 28px; border-radius: 14px; border: 1px solid var(--border-subtle);">
+        <div class="form-group">
+          <input type="text" id="q-name" class="form-control" placeholder="Your Name / Company Name" required>
+        </div>
+        <div class="form-group">
+          <input type="text" id="q-location" class="form-control" placeholder="Site Location (e.g., Wagholi, Kharadi, Loni Kalbhor)" required>
+        </div>
+        <div class="form-group">
+          <select id="q-machine" class="form-control" required>
+            <option value="" disabled selected>Select Requirement Type</option>
+            <option value="Volvo EC210 Excavator (Wet-Lease)">Volvo EC210 Excavator (Wet-Lease)</option>
+            <option value="Hitachi 210 Excavator (Wet-Lease)">Hitachi 210 Excavator (Wet-Lease)</option>
+            <option value="JCB Backhoe Loader">JCB Backhoe Loader</option>
+            <option value="Turnkey Bulk Excavation / Rock Breaking">Turnkey Bulk Excavation / Rock Breaking</option>
+            <option value="Land Leveling / Road Sub-Base Work">Land Leveling / Road Sub-Base Work</option>
+            <option value="Multi-Machine Fleet Requirement">Multi-Machine Fleet Requirement</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="text" id="q-details" class="form-control" placeholder="Duration / Approx. Volume (e.g., 2 Months or 15,000 CUM)">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+          <i class="fa-brands fa-whatsapp" style="font-size: 18px;"></i> Send Requirement on WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/917774049999?text=Hello%20Western%20Estate%2C%20I%20have%20an%20earthmoving%20%2F%20machinery%20requirement%20in%20East%20Pune." class="whatsapp-float" target="_blank">
+    <i class="fa-brands fa-whatsapp" style="font-size: 19px;"></i> Fleet Dispatch
+  </a>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Western Estate — Heavy Earthmoving, Civil Excavation &amp; Infrastructure Fleet | East Pune
+  </footer>
+
+  <script>
+    function sendWhatsAppQuote(e) {
+      e.preventDefault();
+      const name = document.getElementById('q-name').value.trim();
+      const location = document.getElementById('q-location').value.trim();
+      const machine = document.getElementById('q-machine').value;
+      const details = document.getElementById('q-details').value.trim() || 'Not specified';
+
+      const msg = `*WESTERN ESTATE — FLEET / EARTHWORK INQUIRY*%0A` +
+                  `*Client:* ${encodeURIComponent(name)}%0A` +
+                  `*Site Location:* ${encodeURIComponent(location)}%0A` +
+                  `*Requirement:* ${encodeURIComponent(machine)}%0A` +
+                  `*Duration / Scope:* ${encodeURIComponent(details)}`;
+
+      window.open(`https://wa.me/917774049999?text=${msg}`, '_blank');
+    }
+  </script>
+</body>
+</html>
