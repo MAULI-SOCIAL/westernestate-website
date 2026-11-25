@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Western Estate — Heavy Earthmoving & Civil Infrastructure | Pune</title>
+<title>WESTERN ESTATE IRONCLAD — Civil Infrastructure &amp; Earthmoving | Pune</title>
 
 <!-- Google Fonts & Font Awesome Icons -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -360,6 +360,71 @@
     margin-top: 6px;
   }
 
+  /* --- ABOUT US SECTION --- */
+  .about-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 18px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 36px;
+    align-items: center;
+  }
+
+  .about-panel h3 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
+  }
+
+  .about-panel p {
+    font-size: 15.5px;
+    color: var(--text-secondary);
+    line-height: 1.72;
+    margin-bottom: 14px;
+  }
+
+  .about-panel p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-pillars {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .about-pillar-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .about-pillar-item i {
+    color: var(--amber);
+    font-size: 18px;
+    margin-top: 3px;
+  }
+
+  .about-pillar-item strong {
+    display: block;
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 2px;
+  }
+
+  .about-pillar-item span {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+  }
+
   /* --- FLEET INVENTORY GRID --- */
   .grid-3 {
     display: grid;
@@ -588,7 +653,7 @@
     color: var(--text-secondary);
   }
 
-  /* --- EAST PUNE DEPLOYMENT ZONE --- */
+  /* --- PUNE DEPLOYMENT ZONE --- */
   .corridor-box {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
@@ -733,7 +798,7 @@
   }
 
   @media (max-width: 960px) {
-    .hero-grid, .grid-3, .grid-2, .scope-grid, .corridor-box, .dispatch-box {
+    .hero-grid, .about-panel, .grid-3, .grid-2, .scope-grid, .corridor-box, .dispatch-box {
       grid-template-columns: 1fr;
     }
     .hero {
@@ -760,10 +825,10 @@
       <span class="division-tag mono">IRONCLAD // CIVIL &amp; FLEET</span>
     </div>
     <div class="nav-links">
+      <a href="#about" class="nav-link">About Us</a>
       <a href="#fleet" class="nav-link">Machinery Fleet</a>
       <a href="#contracts" class="nav-link">Wet-Lease &amp; Turnkey</a>
       <a href="#earthworks" class="nav-link">Scope of Work</a>
-      <a href="#coverage" class="nav-link">East Pune Zone</a>
       <a href="#dispatch" class="nav-cta">Request Machine</a>
     </div>
   </nav>
@@ -774,10 +839,10 @@
       <div class="hero-grid">
         <div>
           <div class="status-pill mono">
-            <span class="live-dot"></span> Heavy Duty Earthmoving Fleet
+            <span class="live-dot"></span> Pune Fleet Mobilization Active
           </div>
-          <h1>WESTERN ESTATE IRONCLAD <span>Civil Excavation & Infra Solutions </span></h1>
-          <p>Direct deployment of 20-ton class Volvo EC210 &amp; Tata Hitachi EX210 excavators and JCB backhoe loaders for real estate developments, road infrastructure, and government civil contracts across East Pune.</p>
+          <h1>Heavy Earthmoving Fleet &amp; <span>Turnkey Civil Excavation</span></h1>
+          <p>Direct deployment of 20-ton class Volvo EC210 &amp; Tata Hitachi EX210 excavators and JCB backhoe loaders for real estate developments, road infrastructure, and government civil contracts across Pune.</p>
           <div class="cta-group">
             <a href="#dispatch" class="btn btn-primary"><i class="fa-solid fa-truck-monster"></i> Book Machinery / Quote</a>
             <a href="#fleet" class="btn btn-secondary"><i class="fa-solid fa-clipboard-list"></i> Inspect Fleet Specs</a>
@@ -787,7 +852,7 @@
         <div class="dispatch-card mono">
           <div class="dispatch-header">
             <span>// OPERATIONS BRIEF</span>
-            <span>PUNE-EAST</span>
+            <span>PUNE</span>
           </div>
           <div class="dispatch-row">
             <span>HEAVY EXCAVATORS</span>
@@ -802,8 +867,8 @@
             <span>Wet-Lease &amp; Turnkey</span>
           </div>
           <div class="dispatch-row">
-            <span>PRIMARY CORRIDOR</span>
-            <span>Kharadi – Loni Kalbhor</span>
+            <span>SERVICE REGION</span>
+            <span>Pune &amp; Surrounding Belt</span>
           </div>
           <div class="dispatch-row">
             <span>DISPATCH LINE</span>
@@ -814,10 +879,51 @@
     </div>
   </div>
 
+  <!-- ABOUT US SECTION -->
+  <div class="container" id="about">
+    <div class="section-header">
+      <span class="section-eyebrow mono">01 // ABOUT WESTERN ESTATE IRONCLAD</span>
+      <h2>Experience That Moves the Ground</h2>
+      <p>Built for dependable field execution across civil infrastructure and earthmoving operations in Pune.</p>
+    </div>
+
+    <div class="about-panel">
+      <div>
+        <h3>Experience That Moves the Ground</h3>
+        <p>WESTERN ESTATE IRONCLAD is a Pune based civil Infrastructure contracting and earthmoving company. With years of industry experience, we have successfully executed projects ranging from local developments to large-scale turnkey infrastructure works.</p>
+        <p>Our strength lies in our diverse fleet, skilled operators, and a proactive approach that ensures timely delivery without compromising on quality and safety.</p>
+      </div>
+
+      <div class="about-pillars">
+        <div class="about-pillar-item">
+          <i class="fa-solid fa-gears"></i>
+          <div>
+            <strong>Diverse Heavy Fleet</strong>
+            <span>Well-maintained Volvo 210, Hitachi 210 excavators, and JCB backhoe loaders ready for site mobilization.</span>
+          </div>
+        </div>
+        <div class="about-pillar-item">
+          <i class="fa-solid fa-user-check"></i>
+          <div>
+            <strong>Skilled Operators</strong>
+            <span>Seasoned operators focused on precision grading, excavation efficiency, and safe site conduct.</span>
+          </div>
+        </div>
+        <div class="about-pillar-item">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div>
+            <strong>Timely, Safe Delivery</strong>
+            <span>Proactive project coordination that protects schedules without cutting corners on quality or safety.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- FLEET INVENTORY SECTION -->
   <div class="container" id="fleet">
     <div class="section-header">
-      <span class="section-eyebrow mono">01 // OWNED &amp; OPERATED MACHINERY</span>
+      <span class="section-eyebrow mono">02 // OWNED &amp; OPERATED MACHINERY</span>
       <h2>Heavy-Duty Equipment Fleet</h2>
       <p>Maintained on strict preventive service schedules to prevent costly site downtime during critical foundation and road-cutting timelines.</p>
     </div>
@@ -930,7 +1036,7 @@
   <!-- ENGAGEMENT MODELS: WET LEASE VS TURNKEY CONTRACTS -->
   <div class="container" id="contracts">
     <div class="section-header">
-      <span class="section-eyebrow mono">02 // FLEXIBLE COMMERCIAL EXECUTION</span>
+      <span class="section-eyebrow mono">03 // FLEXIBLE COMMERCIAL EXECUTION</span>
       <h2>Wet-Lease Rentals &amp; Turnkey Earthwork Contracts</h2>
       <p>Engage our fleet either on a dedicated rental basis or hand over complete earthmoving execution on fixed cubic-meter / project milestones.</p>
     </div>
@@ -963,8 +1069,8 @@
         <ul class="check-list">
           <li><i class="fa-solid fa-check"></i> <strong>Bulk Excavation &amp; Disposal:</strong> High-volume soil and hard murum excavation with coordinated tipper haulage and dumping.</li>
           <li><i class="fa-solid fa-check"></i> <strong>Hard Rock Breaking &amp; Blasting:</strong> Hydraulic rock-breaker deployment and controlled rock removal for deep basements.</li>
-          <li><i class="fa-solid fa-check"></i> <strong>Precision Land Leveling &amp; Grading:</strong> Plot development, industrial shed pad preparation, and contour leveling.</li>
-          <li><i class="fa-solid fa-check"></i> <strong>Road Sub-Base &amp; Trenching:</strong> GSB/WMM sub-base preparation, storm-water drains, and utility corridor trenching.</li>
+          <li><i class="fa-solid fa-check"></i> <strong>Precision Land Leveling &amp; Grading:</strong> Plot development, industrial pad preparation, and contour leveling.</li>
+          <li><i class="fa-solid fa-check"></i> <strong>Road Sub-Base &amp; Trenching:</strong> Sub-base preparation, storm-water drains, and utility corridor trenching.</li>
         </ul>
       </div>
     </div>
@@ -973,9 +1079,9 @@
   <!-- SCOPE OF CIVIL & INFRASTRUCTURE WORKS -->
   <div class="container" id="earthworks">
     <div class="section-header">
-      <span class="section-eyebrow mono">03 // TECHNICAL CAPABILITIES</span>
+      <span class="section-eyebrow mono">04 // TECHNICAL CAPABILITIES</span>
       <h2>Core Earthmoving &amp; Site Development Scope</h2>
-      <p>Built to serve Tier-1 real estate developers, industrial park builders, and government civil contractors.</p>
+      <p>Built to serve real estate developers, industrial builders, and government civil contractors.</p>
     </div>
 
     <div class="scope-grid">
@@ -988,51 +1094,49 @@
       <div class="scope-item">
         <span class="scope-num mono">SCOPE // 02</span>
         <h4>Hard Rock Breaking &amp; Controlled Blasting</h4>
-        <p>Heavy hydraulic breaker attachments on Volvo/Hitachi 210 excavators for basalt strata removal in urban sites.</p>
+        <p>Heavy hydraulic breaker attachments on Volvo/Hitachi 210 excavators for rock strata removal across construction sites.</p>
       </div>
 
       <div class="scope-item">
         <span class="scope-num mono">SCOPE // 03</span>
         <h4>Layout &amp; Industrial Land Leveling</h4>
-        <p>Cut-and-fill earth balancing, clearing, murum filling, and compaction readiness for plotted layouts, warehouses, and IT parks.</p>
+        <p>Cut-and-fill earth balancing, clearing, murum filling, and site grading for plotted layouts, warehouses, and development projects.</p>
       </div>
 
       <div class="scope-item">
         <span class="scope-num mono">SCOPE // 04</span>
         <h4>Road Sub-Base &amp; Highway Earthwork</h4>
-        <p>Embankment formation, box cutting, shoulder dressing, and sub-base preparation for municipal roads and highway sub-contracts.</p>
+        <p>Embankment formation, box cutting, shoulder dressing, and sub-base preparation for municipal roads and infrastructure sub-contracts.</p>
       </div>
 
       <div class="scope-item">
         <span class="scope-num mono">SCOPE // 05</span>
         <h4>Utility, Drainage &amp; Pipeline Trenching</h4>
-        <p>Long-stretch trench excavation and backfilling for water supply mains, sewage lines, stormwater culverts, and underground cabling.</p>
+        <p>Long-stretch trench excavation and backfilling for water supply mains, sewage lines, stormwater culverts, and underground utilities.</p>
       </div>
 
       <div class="scope-item">
         <span class="scope-num mono">SCOPE // 06</span>
         <h4>Government &amp; Public Infra Sub-Contracts</h4>
-        <p>Reliable fleet augmentation and package execution for PMRDA, PWD, municipal civic works, and irrigation/canal desilting projects.</p>
+        <p>Reliable fleet augmentation and package execution for municipal works, public infrastructure projects, and civil contractors.</p>
       </div>
     </div>
   </div>
 
-  <!-- EAST PUNE OPERATIONAL CORRIDOR -->
+  <!-- PUNE OPERATIONAL COVERAGE -->
   <div class="container" id="coverage">
     <div class="corridor-box">
       <div>
-        <span class="section-eyebrow mono">04 // STRATEGIC GEOGRAPHY</span>
-        <h2 style="font-size: 30px; font-weight: 800; color: #fff; margin-bottom: 12px;">Focused Deployment</h2>
-        <p style="color: var(--text-secondary); font-size: 15px;">Keeping our fleet concentrated across East Pune’s fastest-growing infrastructure belt ensures rapid low-bed trailer mobilization, lower transport overheads, and immediate on-site mechanical support.</p>
+        <span class="section-eyebrow mono">05 // SERVICE COVERAGE</span>
+        <h2 style="font-size: 30px; font-weight: 800; color: #fff; margin-bottom: 12px;">Serving Projects Across Pune</h2>
+        <p style="color: var(--text-secondary); font-size: 15px;">We deploy equipment across Pune for residential, commercial, industrial, and public infrastructure projects—backed by structured fleet maintenance and responsive field support.</p>
         
         <div class="zone-tags mono">
-          <span class="zone-tag"><i class="fa-solid fa-location-dot"></i> Kharadi</span>
-          <span class="zone-tag"><i class="fa-solid fa-location-dot"></i> Wagholi</span>
-          <span class="zone-tag"><i class="fa-solid fa-location-dot"></i> Manjari</span>
-          <span class="zone-tag"><i class="fa-solid fa-location-dot"></i> Loni Kalbhor</span>
-          <span class="zone-tag"><i class="fa-solid fa-location-dot"></i> Hadapsar / Mundhwa</span>
-          <span class="zone-tag"><i class="fa-solid fa-location-dot"></i> Kesnand / Lohegaon</span>
-          <span class="zone-tag"><i class="fa-solid fa-location-dot"></i> Solapur Highway Belt</span>
+          <span class="zone-tag"><i class="fa-solid fa-location-dot"></i> Pune Urban &amp; Suburban</span>
+          <span class="zone-tag"><i class="fa-solid fa-location-dot"></i> Industrial &amp; MIDC Zones</span>
+          <span class="zone-tag"><i class="fa-solid fa-location-dot"></i> Highway &amp; Road Corridors</span>
+          <span class="zone-tag"><i class="fa-solid fa-location-dot"></i> Real Estate Developments</span>
+          <span class="zone-tag"><i class="fa-solid fa-location-dot"></i> Government Infra Works</span>
         </div>
       </div>
 
@@ -1040,7 +1144,7 @@
         <div style="font-size: 12px; color: var(--amber); font-weight: 700; margin-bottom: 12px;">// SITE RELIABILITY STANDARDS</div>
         <div class="sla-row">
           <span class="sla-label">Fleet Mobilization</span>
-          <span class="sla-val">24 – 48 Hours</span>
+          <span class="sla-val">Scheduled &amp; Rapid</span>
         </div>
         <div class="sla-row">
           <span class="sla-label">Operator Coverage</span>
@@ -1051,8 +1155,8 @@
           <span class="sla-val">GST Invoicing + Logbooks</span>
         </div>
         <div class="sla-row">
-          <span class="sla-label">Site Inspection</span>
-          <span class="sla-val">Same-Day Visit</span>
+          <span class="sla-label">Site Assessment</span>
+          <span class="sla-val">Pune-Wide Inspection</span>
         </div>
       </div>
     </div>
@@ -1062,9 +1166,9 @@
   <div class="container" id="dispatch">
     <div class="dispatch-box">
       <div>
-        <span class="section-eyebrow mono">05 // DIRECT FLEET DESK</span>
+        <span class="section-eyebrow mono">06 // DIRECT FLEET DESK</span>
         <h2 style="font-size: 32px; font-weight: 800; color: #fff; margin-bottom: 12px;">Request Machinery or Site Estimate</h2>
-        <p style="color: var(--text-secondary); font-size: 15px;">Share your site location, machine requirement, or approximate excavation volume (CUM). Our operations desk responds directly with machine availability and rate cards.</p>
+        <p style="color: var(--text-secondary); font-size: 15px;">Share your site location in Pune, machine requirement, or approximate excavation volume (CUM). Our team responds directly with availability and project details.</p>
 
         <div class="contact-direct-card">
           <div style="font-size: 12px; color: var(--amber); font-weight: 700; margin-bottom: 10px;" class="mono">DIRECT DISPATCH &amp; CONTRACTS</div>
@@ -1073,7 +1177,7 @@
               <i class="fa-solid fa-phone" style="color: var(--amber);"></i> +91 77740 49999
             </a>
             <span style="color: var(--text-secondary); font-size: 13.5px;">
-              <i class="fa-solid fa-map-pin" style="color: var(--amber); margin-right: 8px;"></i> Operating Across East Pune (Kharadi, Wagholi, Manjari, Loni Kalbhor)
+              <i class="fa-solid fa-map-pin" style="color: var(--amber); margin-right: 8px;"></i> Civil Infrastructure &amp; Earthmoving Operations — Pune
             </span>
           </div>
         </div>
@@ -1085,7 +1189,7 @@
           <input type="text" id="q-name" class="form-control" placeholder="Your Name / Company Name" required>
         </div>
         <div class="form-group">
-          <input type="text" id="q-location" class="form-control" placeholder="Site Location (e.g., Wagholi, Kharadi, Loni Kalbhor)" required>
+          <input type="text" id="q-location" class="form-control" placeholder="Site Location in Pune" required>
         </div>
         <div class="form-group">
           <select id="q-machine" class="form-control" required>
@@ -1109,13 +1213,13 @@
   </div>
 
   <!-- FLOATING WHATSAPP -->
-  <a href="https://wa.me/917774049999?text=Hello%20Western%20Estate%2C%20I%20have%20an%20earthmoving%20%2F%20machinery%20requirement%20in%20East%20Pune." class="whatsapp-float" target="_blank">
+  <a href="https://wa.me/917774049999?text=Hello%20Western%20Estate%20Ironclad%2C%20I%20have%20an%20earthmoving%20%2F%20machinery%20requirement%20in%20Pune." class="whatsapp-float" target="_blank">
     <i class="fa-brands fa-whatsapp" style="font-size: 19px;"></i> Fleet Dispatch
   </a>
 
   <!-- FOOTER -->
   <footer>
-    © 2024 Western Estate — Heavy Earthmoving, Civil Excavation &amp; Infrastructure Fleet | Pune
+    © 2026 Western Estate Ironclad — Civil Infrastructure Contracting &amp; Earthmoving | Pune
   </footer>
 
   <script>
@@ -1126,7 +1230,7 @@
       const machine = document.getElementById('q-machine').value;
       const details = document.getElementById('q-details').value.trim() || 'Not specified';
 
-      const msg = `*WESTERN ESTATE — FLEET / EARTHWORK INQUIRY*%0A` +
+      const msg = `*WESTERN ESTATE IRONCLAD — INQUIRY*%0A` +
                   `*Client:* ${encodeURIComponent(name)}%0A` +
                   `*Site Location:* ${encodeURIComponent(location)}%0A` +
                   `*Requirement:* ${encodeURIComponent(machine)}%0A` +
